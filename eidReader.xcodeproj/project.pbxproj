@@ -36,16 +36,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		746300841E13EFC200ECD5A1 /* cardreader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardreader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		746300841E13EFC200ECD5A1 /* eidReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eidReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		746300871E13EFC200ECD5A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		746300891E13EFC200ECD5A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7463008B1E13EFC200ECD5A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7463008E1E13EFC200ECD5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		746300901E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		746300951E13EFC200ECD5A1 /* cardreaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardreaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		746300951E13EFC200ECD5A1 /* eidReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eidReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		746300991E13EFC200ECD5A1 /* cardreaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardreaderTests.swift; sourceTree = "<group>"; };
 		7463009B1E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		746300A01E13EFC200ECD5A1 /* cardreaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardreaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eidReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardreaderUITests.swift; sourceTree = "<group>"; };
 		746300A61E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		746300B21E13F00E00ECD5A1 /* cardreader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cardreader.entitlements; sourceTree = "<group>"; };
@@ -95,9 +95,9 @@
 		746300851E13EFC200ECD5A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				746300841E13EFC200ECD5A1 /* cardreader.app */,
-				746300951E13EFC200ECD5A1 /* cardreaderTests.xctest */,
-				746300A01E13EFC200ECD5A1 /* cardreaderUITests.xctest */,
+				746300841E13EFC200ECD5A1 /* eidReader.app */,
+				746300951E13EFC200ECD5A1 /* eidReaderTests.xctest */,
+				746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		746300831E13EFC200ECD5A1 /* cardreader */ = {
+		746300831E13EFC200ECD5A1 /* eidReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 746300A91E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "cardreader" */;
+			buildConfigurationList = 746300A91E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReader" */;
 			buildPhases = (
 				746300801E13EFC200ECD5A1 /* Sources */,
 				746300811E13EFC200ECD5A1 /* Frameworks */,
@@ -158,14 +158,14 @@
 			);
 			dependencies = (
 			);
-			name = cardreader;
+			name = eidReader;
 			productName = cardreader;
-			productReference = 746300841E13EFC200ECD5A1 /* cardreader.app */;
+			productReference = 746300841E13EFC200ECD5A1 /* eidReader.app */;
 			productType = "com.apple.product-type.application";
 		};
-		746300941E13EFC200ECD5A1 /* cardreaderTests */ = {
+		746300941E13EFC200ECD5A1 /* eidReaderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 746300AC1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "cardreaderTests" */;
+			buildConfigurationList = 746300AC1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderTests" */;
 			buildPhases = (
 				746300911E13EFC200ECD5A1 /* Sources */,
 				746300921E13EFC200ECD5A1 /* Frameworks */,
@@ -176,14 +176,14 @@
 			dependencies = (
 				746300971E13EFC200ECD5A1 /* PBXTargetDependency */,
 			);
-			name = cardreaderTests;
+			name = eidReaderTests;
 			productName = cardreaderTests;
-			productReference = 746300951E13EFC200ECD5A1 /* cardreaderTests.xctest */;
+			productReference = 746300951E13EFC200ECD5A1 /* eidReaderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7463009F1E13EFC200ECD5A1 /* cardreaderUITests */ = {
+		7463009F1E13EFC200ECD5A1 /* eidReaderUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 746300AF1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "cardreaderUITests" */;
+			buildConfigurationList = 746300AF1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderUITests" */;
 			buildPhases = (
 				7463009C1E13EFC200ECD5A1 /* Sources */,
 				7463009D1E13EFC200ECD5A1 /* Frameworks */,
@@ -194,9 +194,9 @@
 			dependencies = (
 				746300A21E13EFC200ECD5A1 /* PBXTargetDependency */,
 			);
-			name = cardreaderUITests;
+			name = eidReaderUITests;
 			productName = cardreaderUITests;
-			productReference = 746300A01E13EFC200ECD5A1 /* cardreaderUITests.xctest */;
+			productReference = 746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7463007F1E13EFC200ECD5A1 /* Build configuration list for PBXProject "cardreader" */;
+			buildConfigurationList = 7463007F1E13EFC200ECD5A1 /* Build configuration list for PBXProject "eidReader" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -246,9 +246,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				746300831E13EFC200ECD5A1 /* cardreader */,
-				746300941E13EFC200ECD5A1 /* cardreaderTests */,
-				7463009F1E13EFC200ECD5A1 /* cardreaderUITests */,
+				746300831E13EFC200ECD5A1 /* eidReader */,
+				746300941E13EFC200ECD5A1 /* eidReaderTests */,
+				7463009F1E13EFC200ECD5A1 /* eidReaderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -311,12 +311,12 @@
 /* Begin PBXTargetDependency section */
 		746300971E13EFC200ECD5A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 746300831E13EFC200ECD5A1 /* cardreader */;
+			target = 746300831E13EFC200ECD5A1 /* eidReader */;
 			targetProxy = 746300961E13EFC200ECD5A1 /* PBXContainerItemProxy */;
 		};
 		746300A21E13EFC200ECD5A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 746300831E13EFC200ECD5A1 /* cardreader */;
+			target = 746300831E13EFC200ECD5A1 /* eidReader */;
 			targetProxy = 746300A11E13EFC200ECD5A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -465,7 +465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cardreader.app/Contents/MacOS/cardreader";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eidReader.app/Contents/MacOS/eidReader";
 			};
 			name = Debug;
 		};
@@ -481,7 +481,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cardreader.app/Contents/MacOS/cardreader";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eidReader.app/Contents/MacOS/eidReader";
 			};
 			name = Release;
 		};
@@ -518,7 +518,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7463007F1E13EFC200ECD5A1 /* Build configuration list for PBXProject "cardreader" */ = {
+		7463007F1E13EFC200ECD5A1 /* Build configuration list for PBXProject "eidReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				746300A71E13EFC200ECD5A1 /* Debug */,
@@ -527,7 +527,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		746300A91E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "cardreader" */ = {
+		746300A91E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				746300AA1E13EFC200ECD5A1 /* Debug */,
@@ -536,7 +536,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		746300AC1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "cardreaderTests" */ = {
+		746300AC1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				746300AD1E13EFC200ECD5A1 /* Debug */,
@@ -545,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		746300AF1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "cardreaderUITests" */ = {
+		746300AF1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				746300B01E13EFC200ECD5A1 /* Debug */,
