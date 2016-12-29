@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:cardreader.xcodeproj">
+      location = "self:/Users/damiaan/Documents/cardreader/eidReader.xcodeproj">
    </FileRef>
 </Workspace>
