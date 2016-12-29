@@ -215,7 +215,7 @@ extension TKSmartCard {
 		}
 		
 		var nationalIDNumber : String {
-			let checksum = (97 - birthNumber % 97)
+			let checksum = 97 - (1000 * Int(BasicInfo.nationalIDNumberFormatter.string(from: birthday))! + Int(birthNumber)) % 97
 			return BasicInfo.nationalIDNumberDottedFormatter.string(from: birthday) + "-\(birthNumber).\(checksum)"
 		}
 	}
