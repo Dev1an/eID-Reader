@@ -3,4 +3,8 @@ A macOS application to view information from Belgian electronic ID cards also kn
 
 This application uses Apple's standard `CryptoTokenKit` framework and is written completely in Swift 3.
 
+## Download
+
+From [GitHub](https://github.com/Dev1an/eID-Reader/releases/latest) or the App store
+
 ![screenshot](screenshot.png)
