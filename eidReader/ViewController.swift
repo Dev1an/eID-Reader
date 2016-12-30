@@ -29,7 +29,7 @@ class ViewController: NSViewController {
 	var currentSlot: TKSmartCardSlot?
 	var currentAddress: TKSmartCard.Address?
 	
-	var profileImageLayer: CALayer!
+	var profileImageLayer: CALayer?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,7 +39,7 @@ class ViewController: NSViewController {
 		profileImageLayer = profileImage.layer
 		print(profileImage.wantsLayer)
 		profileImage.layer?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1010948504).cgColor
-		
+		profileImageLayer?.cornerRadius = 3
 	}
 	
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
