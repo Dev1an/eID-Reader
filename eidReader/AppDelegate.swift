@@ -50,8 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-		print(menuItem.title, menuItem.tag)
-		return true
+		return currentSlot?.state == .validCard
 	}
 	
 	func createDocumentFromCurrentCard() -> Document {
