@@ -29,7 +29,6 @@ class ViewController: NSViewController {
 		super.viewDidLoad()
 		
 		profileImageLayer = profileImage.layer
-		print(profileImage.wantsLayer)
 		profileImage.layer?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1010948504).cgColor
 		profileImageLayer?.cornerRadius = 3
 	}
