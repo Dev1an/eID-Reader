@@ -109,7 +109,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			}
 		} else if keyPath == #keyPath(currentSlot.state) {
 			if let state = currentSlot?.state {
-				print("slot state:", state)
 				switch state {
 				case .missing :
 					removeObserver(self, forKeyPath: #keyPath(currentSlot.state), context: nil)
@@ -157,7 +156,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func observe(slot: String) {
-		print("observing slot")
 		DispatchQueue.main.async {
 			self.readerWindow?.title = slot
 			self.showMainWindow()
@@ -169,8 +167,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
-		// Insert code here to tear down your application
-		
 		removeObserver(self, forKeyPath: #keyPath(slotManager.slotNames), context: nil)
 	}
 
