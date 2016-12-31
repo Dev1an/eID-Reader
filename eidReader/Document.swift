@@ -23,7 +23,7 @@ class Document: NSDocument {
 	var mainWindow: NSWindow?
 	
 	override func makeWindowControllers() {
-		let windowController = storyboard.instantiateController(withIdentifier: "Document window controller") as! NSWindowController
+		let windowController = createCardWindow()
 		self.addWindowController(windowController)
 		mainWindow = windowController.window
 		updateViewController {
@@ -59,5 +59,4 @@ class Document: NSDocument {
     override class func autosavesInPlace() -> Bool {
         return true
     }
-
 }

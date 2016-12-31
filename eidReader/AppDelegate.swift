@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	var viewController: ViewController?
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		let windowController = storyboard.instantiateController(withIdentifier: "Reader window controller") as! NSWindowController
+		let windowController = createCardWindow()
 		windowController.showWindow(self)
 		readerWindow = windowController.window
 		viewController = (readerWindow?.contentViewController as! ViewController)

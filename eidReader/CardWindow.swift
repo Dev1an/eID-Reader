@@ -9,6 +9,10 @@
 import Cocoa
 import MapKit
 
+func createCardWindow() -> NSWindowController {
+	return storyboard.instantiateController(withIdentifier: "Card window controller") as! NSWindowController
+}
+
 class ViewController: NSViewController {
 	@IBOutlet weak var profileImage: NSImageView!
 	@IBOutlet weak var imageProgressIndicator: NSProgressIndicator!
@@ -78,4 +82,13 @@ class ViewController: NSViewController {
 		}
 	}
 	
+}
+
+class CardView: NSView {
+	override var acceptsFirstResponder: Bool { return true }
+	
+	@IBAction override func print(_ sender: Any?) {
+		Swift.print("printing view")
+		NSPrintOperation(view: self).run()
+	}
 }
