@@ -15,6 +15,7 @@
 		746300A51E13EFC200ECD5A1 /* cardreaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */; };
 		746300B51E13F08100ECD5A1 /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */; };
 		746300B81E14259E00ECD5A1 /* BEIDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300B71E14259E00ECD5A1 /* BEIDCard.swift */; };
+		746949431E172E9700386F45 /* ReaderWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746949421E172E9700386F45 /* ReaderWindow.swift */; };
 		74FCE6D31E15972A00CDF841 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74FCE6D21E15972A00CDF841 /* MapKit.framework */; };
 		74FCE7111E16B76500CDF841 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCE7101E16B76500CDF841 /* Document.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		746300A61E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
 		746300B71E14259E00ECD5A1 /* BEIDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEIDCard.swift; sourceTree = "<group>"; };
+		746949421E172E9700386F45 /* ReaderWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderWindow.swift; sourceTree = "<group>"; };
 		74FCE6D11E15966100CDF841 /* eidReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eidReader.entitlements; sourceTree = "<group>"; };
 		74FCE6D21E15972A00CDF841 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		74FCE6D61E15BAE400CDF841 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				746300B71E14259E00ECD5A1 /* BEIDCard.swift */,
 				74FCE7101E16B76500CDF841 /* Document.swift */,
 				746300891E13EFC200ECD5A1 /* ViewController.swift */,
+				746949421E172E9700386F45 /* ReaderWindow.swift */,
 				7463008B1E13EFC200ECD5A1 /* Assets.xcassets */,
 				7463008D1E13EFC200ECD5A1 /* Main.storyboard */,
 				746300901E13EFC200ECD5A1 /* Info.plist */,
@@ -222,7 +225,7 @@
 								enabled = 1;
 							};
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74FCE7111E16B76500CDF841 /* Document.swift in Sources */,
+				746949431E172E9700386F45 /* ReaderWindow.swift in Sources */,
 				7463008A1E13EFC200ECD5A1 /* ViewController.swift in Sources */,
 				746300B81E14259E00ECD5A1 /* BEIDCard.swift in Sources */,
 				746300881E13EFC200ECD5A1 /* AppDelegate.swift in Sources */,

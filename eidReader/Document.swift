@@ -10,18 +10,16 @@ import Cocoa
 
 class Document: NSDocument {
 
-    /*
-    override var windowNibName: String? {
-        // Override returning the nib file name of the document
-        // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-        return "Document"
-    }
-    */
+	var address: Address?
+	var basicInfo: BasicInfo?
+	
+	var mainWindow: NSWindow?
 	
 	override func makeWindowControllers() {
-		let storyboard = NSStoryboard(name: "Main", bundle: nil)
-		let windowController = storyboard.instantiateController(withIdentifier: "ID Window Controller") as! NSWindowController
+		Swift.print("made a doc")
+		let windowController = storyboard.instantiateController(withIdentifier: "Document window controller") as! NSWindowController
 		self.addWindowController(windowController)
+		mainWindow = windowController.window
 	}
 
     override func windowControllerDidLoadNib(_ aController: NSWindowController) {
@@ -32,6 +30,8 @@ class Document: NSDocument {
     override func data(ofType typeName: String) throws -> Data {
         // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
         // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
+		
+//		return Data()
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
     
@@ -39,6 +39,7 @@ class Document: NSDocument {
         // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning false.
         // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return false if the contents are lazily loaded.
+		
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
 
