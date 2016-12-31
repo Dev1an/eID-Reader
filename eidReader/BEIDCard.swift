@@ -20,29 +20,84 @@ let readBinary:    [UInt8] = [0,    0xB0]
 
 let geocoder = CLGeocoder()
 
-extension TKSmartCard {
-	
-	class Address: NSObject, MKAnnotation {
-		let street: String
-		let city: String
-		let postalCode: String
-		var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-		var title: String?
-		var subtitle: String? {
-			return "\(street)\n\(postalCode) \(city)"
-		}
-		
-		init (address: (street: String, postalCode: String, city: String), title: String? = nil, geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler = {_,_ in }) {
-			(street, postalCode, city) = address
-			self.title = title
-			geocoder.geocodeAddressString("\(street), \(postalCode) \(city)", completionHandler: geocodeCompletionHandler)
-		}
-		
-		override var debugDescription: String {
-			return "\(street)\n\(postalCode) \(city)"
-		}
+class Address: NSObject, MKAnnotation {
+	let street: String
+	let city: String
+	let postalCode: String
+	var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+	var title: String?
+	var subtitle: String? {
+		return "\(street)\n\(postalCode) \(city)"
 	}
 	
+	init (address: (street: String, postalCode: String, city: String), title: String? = nil, geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler = {_,_ in }) {
+		(street, postalCode, city) = address
+		self.title = title
+		geocoder.geocodeAddressString("\(street), \(postalCode) \(city)", completionHandler: geocodeCompletionHandler)
+	}
+	
+	override var debugDescription: String {
+		return "\(street)\n\(postalCode) \(city)"
+	}
+}
+
+struct BasicInfo: CustomDebugStringConvertible {
+	enum Index: UInt8 {
+		case cardNumber = 1, validityStart = 3, validityEnd, releasePlace, nationalIdNumber, lastName, firstName, otherName, nationality, birthPlace, birthDate
+	}
+	enum Sex: UInt8 {
+		case female, male
+	}
+	
+	static let validityDateFormatter = DateFormatter(format: "dd.MM.yyyy")
+	static let nationalIDNumberFormatter = DateFormatter(format: "YYMMdd")
+	static let nationalIDNumberDottedFormatter = DateFormatter(format: "YY.MM.dd")
+	
+	let cardNumber, releasePlace, firstName, lastName, otherName, nationality, birthPlace: String
+	let validityStart, validityEnd, birthday: Date
+	let birthNumber: UInt16
+	
+	init(from file: Data) {
+		let ranges = loadDictionary(from: file.dropLast(2))
+		func field(_ index: Index) -> Data.SubSequence {
+			return file[ranges[index.rawValue]!]
+		}
+		func string(with index: Index) -> String {
+			return String(bytes: field(index), encoding: .ascii)!
+		}
+		func range(of index: Index) -> CountableRange<Int> {
+			return ranges[index.rawValue]!
+		}
+		
+		cardNumber = string(with: .cardNumber)
+		validityStart = BasicInfo.validityDateFormatter.date(from: string(with: .validityStart))!
+		validityEnd = BasicInfo.validityDateFormatter.date(from: string(with: .validityEnd))!
+		birthPlace = string(with: .birthPlace)
+		birthday = BasicInfo.nationalIDNumberFormatter.date(from: String(bytes: file[range(of: .nationalIdNumber).dropLast(5)], encoding: .ascii)!)!
+		let birthNumberDigits = file[range(of: .nationalIdNumber).suffix(5).dropLast(2)].map {UInt16($0 & 0b1111)}
+		birthNumber = 100 * birthNumberDigits[0] + 10*birthNumberDigits[1] + birthNumberDigits[2]
+		lastName = string(with: .lastName)
+		firstName = string(with: .firstName)
+		otherName = string(with: .otherName)
+		nationality = string(with: .nationality)
+		releasePlace = string(with: .releasePlace)
+	}
+	
+	var sex: Sex {
+		return Sex(rawValue: UInt8(UInt16(birthNumber) % UInt16(2)))!
+	}
+	
+	var debugDescription: String {
+		return "ID card of \(firstName) \(otherName) \(lastName)"
+	}
+	
+	var nationalIDNumber : String {
+		let checksum = 97 - (1000 * Int(BasicInfo.nationalIDNumberFormatter.string(from: birthday))! + Int(birthNumber)) % 97
+		return BasicInfo.nationalIDNumberDottedFormatter.string(from: birthday) + "-\(birthNumber).\(checksum)"
+	}
+}
+
+extension TKSmartCard {
 	enum CardError: Error {
 		case NoPreciseDiagnostic, EepromCorrupted, WrongParameterP1P2, CommandNotAvailableWithinCurrentLifeCycle
 	}
@@ -164,61 +219,6 @@ extension TKSmartCard {
 		}
 	}
 	
-	struct BasicInfo: CustomDebugStringConvertible {
-		enum Index: UInt8 {
-			case cardNumber = 1, validityStart = 3, validityEnd, releasePlace, nationalIdNumber, lastName, firstName, otherName, nationality, birthPlace, birthDate
-		}
-		enum Sex: UInt8 {
-			case female, male
-		}
-		
-		static let validityDateFormatter = DateFormatter(format: "dd.MM.yyyy")
-		static let nationalIDNumberFormatter = DateFormatter(format: "YYMMdd")
-		static let nationalIDNumberDottedFormatter = DateFormatter(format: "YY.MM.dd")
-		
-		let cardNumber, releasePlace, firstName, lastName, otherName, nationality, birthPlace: String
-		let validityStart, validityEnd, birthday: Date
-		let birthNumber: UInt16
-		
-		init(from file: Data) {
-			let ranges = loadDictionary(from: file.dropLast(2))
-			func field(_ index: Index) -> Data.SubSequence {
-				return file[ranges[index.rawValue]!]
-			}
-			func string(with index: Index) -> String {
-				return String(bytes: field(index), encoding: .ascii)!
-			}
-			func range(of index: Index) -> CountableRange<Int> {
-				return ranges[index.rawValue]!
-			}
-			
-			cardNumber = string(with: .cardNumber)
-			validityStart = BasicInfo.validityDateFormatter.date(from: string(with: .validityStart))!
-			validityEnd = BasicInfo.validityDateFormatter.date(from: string(with: .validityEnd))!
-			birthPlace = string(with: .birthPlace)
-			birthday = BasicInfo.nationalIDNumberFormatter.date(from: String(bytes: file[range(of: .nationalIdNumber).dropLast(5)], encoding: .ascii)!)!
-			let birthNumberDigits = file[range(of: .nationalIdNumber).suffix(5).dropLast(2)].map {UInt16($0 & 0b1111)}
-			birthNumber = 100 * birthNumberDigits[0] + 10*birthNumberDigits[1] + birthNumberDigits[2]
-			lastName = string(with: .lastName)
-			firstName = string(with: .firstName)
-			otherName = string(with: .otherName)
-			nationality = string(with: .nationality)
-			releasePlace = string(with: .releasePlace)
-		}
-		
-		var sex: Sex {
-			return Sex(rawValue: UInt8(UInt16(birthNumber) % UInt16(2)))!
-		}
-		
-		var debugDescription: String {
-			return "ID card of \(firstName) \(otherName) \(lastName)"
-		}
-		
-		var nationalIDNumber : String {
-			let checksum = 97 - (1000 * Int(BasicInfo.nationalIDNumberFormatter.string(from: birthday))! + Int(birthNumber)) % 97
-			return BasicInfo.nationalIDNumberDottedFormatter.string(from: birthday) + "-\(birthNumber).\(checksum)"
-		}
-	}
 	
 	func getBasicInfo(reply: @escaping (BasicInfo?, Error?)->Void) {
 		read(file: basicInfoFile, length: 165) { (data, error) in
