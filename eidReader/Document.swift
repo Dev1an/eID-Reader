@@ -23,7 +23,6 @@ class Document: NSDocument {
 	var mainWindow: NSWindow?
 	
 	override func makeWindowControllers() {
-		Swift.print("made a doc")
 		let windowController = storyboard.instantiateController(withIdentifier: "Document window controller") as! NSWindowController
 		self.addWindowController(windowController)
 		mainWindow = windowController.window
@@ -41,9 +40,6 @@ class Document: NSDocument {
 	}
 
     override func data(ofType typeName: String) throws -> Data {
-        // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-        // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-		
 		let data = NSMutableData()
 		let archiver = NSKeyedArchiver(forWritingWith: data)
 		archiver.encode(address, forKey: "address")
@@ -54,9 +50,6 @@ class Document: NSDocument {
     }
     
     override func read(from data: Data, ofType typeName: String) throws {
-        // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning false.
-        // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-        // If you override either of these, you should also override -isEntireFileLoaded to return false if the contents are lazily loaded.
 		let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
         basicInfo = unarchiver.decodeObject(forKey: "basic information") as? BasicInfo
 		address = unarchiver.decodeObject(forKey: "address") as? Address
