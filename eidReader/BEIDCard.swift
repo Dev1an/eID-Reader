@@ -20,7 +20,7 @@ let readBinary:    [UInt8] = [0,    0xB0]
 
 let geocoder = CLGeocoder()
 
-class Address: NSObject, MKAnnotation {
+class Address: NSObject, MKAnnotation, NSCoding {
 	let street: String
 	let city: String
 	let postalCode: String
@@ -30,7 +30,31 @@ class Address: NSObject, MKAnnotation {
 		return "\(street)\n\(postalCode) \(city)"
 	}
 	
-	init (address: (street: String, postalCode: String, city: String), title: String? = nil, geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler = {_,_ in }) {
+	enum ArchiveKey: String {
+		case street, city, postalColde, title, latitude, longitude
+	}
+	
+	func encode(with aCoder: NSCoder) {
+		aCoder.encode(street, forKey: ArchiveKey.street.rawValue)
+		aCoder.encode(city, forKey: ArchiveKey.city.rawValue)
+		aCoder.encode(postalCode, forKey: ArchiveKey.postalColde.rawValue)
+		aCoder.encode(title, forKey: ArchiveKey.title.rawValue)
+		aCoder.encode(coordinate.latitude, forKey: ArchiveKey.latitude.rawValue)
+		aCoder.encode(coordinate.longitude, forKey: ArchiveKey.longitude.rawValue)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		street = aDecoder.decodeObject(forKey: ArchiveKey.street.rawValue) as! String
+		postalCode = aDecoder.decodeObject(forKey: ArchiveKey.postalColde.rawValue) as! String
+		city = aDecoder.decodeObject(forKey: ArchiveKey.city.rawValue) as! String
+		title = aDecoder.decodeObject(forKey: ArchiveKey.title.rawValue) as? String
+
+		let latitude = aDecoder.decodeDouble(forKey: ArchiveKey.latitude.rawValue)
+		let longitude = aDecoder.decodeDouble(forKey: ArchiveKey.longitude.rawValue)
+		coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+	}
+	
+	init (address: (street: String, postalCode: String, city: String), title: String? = nil, geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler) {
 		(street, postalCode, city) = address
 		self.title = title
 		geocoder.geocodeAddressString("\(street), \(postalCode) \(city)", completionHandler: geocodeCompletionHandler)
@@ -41,12 +65,17 @@ class Address: NSObject, MKAnnotation {
 	}
 }
 
-struct BasicInfo: CustomDebugStringConvertible {
+class BasicInfo: NSObject, NSCoding {
 	enum Index: UInt8 {
 		case cardNumber = 1, validityStart = 3, validityEnd, releasePlace, nationalIdNumber, lastName, firstName, otherName, nationality, birthPlace, birthDate
 	}
+	
 	enum Sex: UInt8 {
 		case female, male
+	}
+	
+	enum ArchiveKey: String {
+		case cardNumber, releasePlace, firstName, lastName, otherName, nationality, birthPlace, validityStart, validityEnd, birthday, birthNumber
 	}
 	
 	static let validityDateFormatter = DateFormatter(format: "dd.MM.yyyy")
@@ -83,11 +112,49 @@ struct BasicInfo: CustomDebugStringConvertible {
 		releasePlace = string(with: .releasePlace)
 	}
 	
+	required init?(coder aDecoder: NSCoder) {
+		func string(with key: ArchiveKey) -> String {
+			return aDecoder.decodeObject(forKey: key.rawValue) as! String
+		}
+		
+		  cardNumber = string(with: .cardNumber)
+		releasePlace = string(with: .releasePlace)
+		   firstName = string(with: .firstName)
+		    lastName = string(with: .lastName)
+		   otherName = string(with: .otherName)
+		 nationality = string(with: .nationality)
+		  birthPlace = string(with: .birthPlace)
+		
+		validityStart = aDecoder.decodeObject(forKey: ArchiveKey.validityStart.rawValue) as! Date
+		  validityEnd = aDecoder.decodeObject(forKey: ArchiveKey.validityEnd.rawValue) as! Date
+		     birthday = aDecoder.decodeObject(forKey: ArchiveKey.birthday.rawValue) as! Date
+		
+		birthNumber = aDecoder.decodeObject(forKey: ArchiveKey.birthNumber.rawValue) as! UInt16
+	}
+	
+	func encode(with aCoder: NSCoder) {
+		func encode(_ object: Any?, for key: ArchiveKey) {
+			aCoder.encode(object, forKey: key.rawValue)
+		}
+		
+		encode(cardNumber, for: .cardNumber)
+		encode(releasePlace, for: .releasePlace)
+		encode(firstName, for: .firstName)
+		encode(lastName, for: .lastName)
+		encode(otherName, for: .otherName)
+		encode(nationality, for: .nationality)
+		encode(birthPlace, for: .birthPlace)
+		encode(validityStart, for: .validityStart)
+		encode(validityEnd, for: .validityEnd)
+		encode(birthday, for: .birthday)
+		encode(birthNumber, for: .birthNumber)
+	}
+	
 	var sex: Sex {
 		return Sex(rawValue: UInt8(UInt16(birthNumber) % UInt16(2)))!
 	}
 	
-	var debugDescription: String {
+	override var debugDescription: String {
 		return "ID card of \(firstName) \(otherName) \(lastName)"
 	}
 	

@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	let slotManager = TKSmartCardSlotManager.default
 	var currentSlot: TKSmartCardSlot?
 	var currentAddress: Address?
+	var basicInfo: BasicInfo?
+	var profileImage: NSImage?
 	
 	var readerWindow: NSWindow?
 	var viewController: ViewController?
@@ -55,6 +57,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func createDocumentFromCurrentCard() -> Document {
 		let document = Document()
+		document.address = currentAddress
+		document.basicInfo = basicInfo
+		document.profileImage = profileImage
 		NSDocumentController.shared().addDocument(document)
 		document.makeWindowControllers()
 		if let oldWindow = readerWindow, let newWindow = document.mainWindow {
@@ -128,6 +133,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 							card.getProfileImage(updateProgress: self.updateImageProgress) { (imageData, error) in
 								if let imageData = imageData, let image = NSImage(data: imageData) {
 									DispatchQueue.main.async {
+										self.profileImage = image
 										self.viewController?.profileImage.image = image
 									}
 								}
@@ -136,6 +142,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 							DispatchQueue.main.async { self.viewController?.imageProgressIndicator.isHidden = false }
 							if let basicInfo = basicInfo {
 								DispatchQueue.main.async {
+									self.basicInfo = basicInfo
 									self.viewController?.basicInfo = basicInfo
 								}
 							}
