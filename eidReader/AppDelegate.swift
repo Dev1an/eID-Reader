@@ -170,7 +170,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		removeObserver(self, forKeyPath: #keyPath(slotManager.slotNames), context: nil)
 	}
 
-
+	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+		return true
+	}
 }
 
 extension Data {
