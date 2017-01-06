@@ -1,15 +1,7 @@
 # eID-Reader
 A macOS application to view and save information from Belgian electronic ID cards also known as (beID or belgian eID) without the need to install additional drivers or java software.
 
-Following information is available:
-- Profile picture
-- First and last name
-- Sex
-- Place of birth and birthday
-- Home address (textual and visual using maps)
-- Identification number of the National Register
-- Card number
-- Validity period
+![screenshot](screenshot.png)
 
 ## Technology
 
@@ -24,5 +16,3 @@ This application uses Apple's standard `CryptoTokenKit` framework to communicate
 </a>
 
 Download via [GitHub](https://github.com/Dev1an/eID-Reader/releases/latest)
-
-![screenshot](screenshot.png)
