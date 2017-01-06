@@ -269,7 +269,7 @@ extension TKSmartCard {
 	}
 	
 	func getAddress(geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler = {(_,_) in}, reply: @escaping (_ address: Address?, _ error: Error?) -> Void) {
-		read(file: addressFile, length: 121) { (data, error) in
+		readUntilError(file: addressFile) { (data, error) in
 			if let error = error {
 				reply(nil, error)
 			} else if let data = data {
