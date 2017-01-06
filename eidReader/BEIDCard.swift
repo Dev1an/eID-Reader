@@ -92,7 +92,7 @@ class BasicInfo: NSObject, NSCoding {
 			return file[ranges[index.rawValue]!]
 		}
 		func string(with index: Index) -> String {
-			return String(bytes: field(index), encoding: .ascii)!
+			return String(bytes: field(index), encoding: .utf8)!
 		}
 		func range(of index: Index) -> CountableRange<Int> {
 			return ranges[index.rawValue]!
@@ -102,7 +102,7 @@ class BasicInfo: NSObject, NSCoding {
 		validityStart = BasicInfo.validityDateFormatter.date(from: string(with: .validityStart))!
 		validityEnd = BasicInfo.validityDateFormatter.date(from: string(with: .validityEnd))!
 		birthPlace = string(with: .birthPlace)
-		birthday = BasicInfo.nationalIDNumberFormatter.date(from: String(bytes: file[range(of: .nationalIdNumber).dropLast(5)], encoding: .ascii)!)!
+		birthday = BasicInfo.nationalIDNumberFormatter.date(from: String(bytes: file[range(of: .nationalIdNumber).dropLast(5)], encoding: .utf8)!)!
 		let birthNumberDigits = file[range(of: .nationalIdNumber).suffix(5).dropLast(2)].map {UInt16($0 & 0b1111)}
 		birthNumber = 100 * birthNumberDigits[0] + 10*birthNumberDigits[1] + birthNumberDigits[2]
 		lastName = string(with: .lastName)
@@ -278,9 +278,9 @@ extension TKSmartCard {
 				let city = postalCode.upperBound + 2  ..<  postalCode.upperBound + Int(data[postalCode.upperBound+1]) + 2
 				
 				reply(Address( address: (
-					String(bytes: data[street], encoding: .ascii)!,
-					String(bytes: data[postalCode], encoding: .ascii)!,
-					String(bytes: data[city], encoding: .ascii)!
+					String(bytes: data[street], encoding: .utf8)!,
+					String(bytes: data[postalCode], encoding: .utf8)!,
+					String(bytes: data[city], encoding: .utf8)!
 					), title: "Woonplaats", geocodeCompletionHandler: geocodeCompletionHandler), nil)
 			}
 		}
