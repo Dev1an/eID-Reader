@@ -7,8 +7,10 @@ This application uses Apple's standard `CryptoTokenKit` framework to communicate
 
 ## Download
 
-via GitHub
+via [GitHub](https://github.com/Dev1an/eID-Reader/releases/latest)
 
-[![Download_on_the_App_Store_Badge_US-UK_135x40](Download_on_the_App_Store_Badge_US-UK_135x40.svg)](https://itunes.apple.com/us/app/eidreader/id1190651975?l=nl&ls=1&mt=12)
+<a href="https://itunes.apple.com/us/app/eidreader/id1190651975?l=nl&ls=1&mt=12">
+![Download on the App Store Badge](Download_on_the_App_Store_Badge_US-UK.svg)
+</a>
 
 ![screenshot](screenshot.png)
