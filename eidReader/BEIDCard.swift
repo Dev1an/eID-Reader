@@ -67,7 +67,7 @@ class Address: NSObject, MKAnnotation, NSCoding {
 
 class BasicInfo: NSObject, NSCoding {
 	enum Index: UInt8 {
-		case cardNumber = 1, validityStart = 3, validityEnd, releasePlace, nationalIdNumber, lastName, firstName, otherName, nationality, birthPlace, birthDate
+		case fileStructureVersion = 0, cardNumber, chipNumber, validityStart, validityEnd, releasePlace, nationalIdNumber, lastName, firstName, otherName, nationality, birthPlace, birthDate, sex, nobleCondition, documentType, specialStatus, pictureHash, duplicate, specialOrganisation, memberOfFamily, protection
 	}
 	
 	enum Sex: UInt8 {
