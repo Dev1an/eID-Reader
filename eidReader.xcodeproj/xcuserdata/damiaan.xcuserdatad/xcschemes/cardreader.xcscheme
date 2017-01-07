@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "746300831E13EFC200ECD5A1"
-               BuildableName = "cardreader.app"
-               BlueprintName = "cardreader"
-               ReferencedContainer = "container:cardreader.xcodeproj">
+               BuildableName = "eidReader.app"
+               BlueprintName = "eidReader"
+               ReferencedContainer = "container:eidReader.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "746300941E13EFC200ECD5A1"
-               BuildableName = "cardreaderTests.xctest"
-               BlueprintName = "cardreaderTests"
-               ReferencedContainer = "container:cardreader.xcodeproj">
+               BuildableName = "eidReaderTests.xctest"
+               BlueprintName = "eidReaderTests"
+               ReferencedContainer = "container:eidReader.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7463009F1E13EFC200ECD5A1"
-               BuildableName = "cardreaderUITests.xctest"
-               BlueprintName = "cardreaderUITests"
-               ReferencedContainer = "container:cardreader.xcodeproj">
+               BuildableName = "eidReaderUITests.xctest"
+               BlueprintName = "eidReaderUITests"
+               ReferencedContainer = "container:eidReader.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "746300831E13EFC200ECD5A1"
-            BuildableName = "cardreader.app"
-            BlueprintName = "cardreader"
-            ReferencedContainer = "container:cardreader.xcodeproj">
+            BuildableName = "eidReader.app"
+            BlueprintName = "eidReader"
+            ReferencedContainer = "container:eidReader.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "746300831E13EFC200ECD5A1"
-            BuildableName = "cardreader.app"
-            BlueprintName = "cardreader"
-            ReferencedContainer = "container:cardreader.xcodeproj">
+            BuildableName = "eidReader.app"
+            BlueprintName = "eidReader"
+            ReferencedContainer = "container:eidReader.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "746300831E13EFC200ECD5A1"
-            BuildableName = "cardreader.app"
-            BlueprintName = "cardreader"
-            ReferencedContainer = "container:cardreader.xcodeproj">
+            BuildableName = "eidReader.app"
+            BlueprintName = "eidReader"
+            ReferencedContainer = "container:eidReader.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
