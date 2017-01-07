@@ -15,7 +15,7 @@
 		746300A51E13EFC200ECD5A1 /* cardreaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */; };
 		746300B51E13F08100ECD5A1 /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */; };
 		746300B81E14259E00ECD5A1 /* BEIDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300B71E14259E00ECD5A1 /* BEIDCard.swift */; };
-		746300BA1E156B8400ECD5A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746300B91E156B8400ECD5A1 /* MapKit.framework */; };
+		74FCE6D31E15972A00CDF841 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74FCE6D21E15972A00CDF841 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +48,10 @@
 		746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eidReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardreaderUITests.swift; sourceTree = "<group>"; };
 		746300A61E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		746300B21E13F00E00ECD5A1 /* cardreader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cardreader.entitlements; sourceTree = "<group>"; };
 		746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
 		746300B71E14259E00ECD5A1 /* BEIDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEIDCard.swift; sourceTree = "<group>"; };
-		746300B91E156B8400ECD5A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		74FCE6D11E15966100CDF841 /* eidReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eidReader.entitlements; sourceTree = "<group>"; };
+		74FCE6D21E15972A00CDF841 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746300BA1E156B8400ECD5A1 /* MapKit.framework in Frameworks */,
+				74FCE6D31E15972A00CDF841 /* MapKit.framework in Frameworks */,
 				746300B51E13F08100ECD5A1 /* CryptoTokenKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,9 +84,9 @@
 		7463007B1E13EFC200ECD5A1 = {
 			isa = PBXGroup;
 			children = (
-				746300861E13EFC200ECD5A1 /* cardreader */,
-				746300981E13EFC200ECD5A1 /* cardreaderTests */,
-				746300A31E13EFC200ECD5A1 /* cardreaderUITests */,
+				746300861E13EFC200ECD5A1 /* eidReader */,
+				746300981E13EFC200ECD5A1 /* eidReaderTests */,
+				746300A31E13EFC200ECD5A1 /* eidReaderUITests */,
 				746300851E13EFC200ECD5A1 /* Products */,
 				746300B31E13F08100ECD5A1 /* Frameworks */,
 			);
@@ -102,10 +102,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		746300861E13EFC200ECD5A1 /* cardreader */ = {
+		746300861E13EFC200ECD5A1 /* eidReader */ = {
 			isa = PBXGroup;
 			children = (
-				746300B21E13F00E00ECD5A1 /* cardreader.entitlements */,
+				74FCE6D11E15966100CDF841 /* eidReader.entitlements */,
 				746300871E13EFC200ECD5A1 /* AppDelegate.swift */,
 				746300B71E14259E00ECD5A1 /* BEIDCard.swift */,
 				746300891E13EFC200ECD5A1 /* ViewController.swift */,
@@ -113,31 +113,31 @@
 				7463008D1E13EFC200ECD5A1 /* Main.storyboard */,
 				746300901E13EFC200ECD5A1 /* Info.plist */,
 			);
-			path = cardreader;
+			path = eidReader;
 			sourceTree = "<group>";
 		};
-		746300981E13EFC200ECD5A1 /* cardreaderTests */ = {
+		746300981E13EFC200ECD5A1 /* eidReaderTests */ = {
 			isa = PBXGroup;
 			children = (
 				746300991E13EFC200ECD5A1 /* cardreaderTests.swift */,
 				7463009B1E13EFC200ECD5A1 /* Info.plist */,
 			);
-			path = cardreaderTests;
+			path = eidReaderTests;
 			sourceTree = "<group>";
 		};
-		746300A31E13EFC200ECD5A1 /* cardreaderUITests */ = {
+		746300A31E13EFC200ECD5A1 /* eidReaderUITests */ = {
 			isa = PBXGroup;
 			children = (
 				746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */,
 				746300A61E13EFC200ECD5A1 /* Info.plist */,
 			);
-			path = cardreaderUITests;
+			path = eidReaderUITests;
 			sourceTree = "<group>";
 		};
 		746300B31E13F08100ECD5A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				746300B91E156B8400ECD5A1 /* MapKit.framework */,
+				74FCE6D21E15972A00CDF841 /* MapKit.framework */,
 				746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */,
 			);
 			name = Frameworks;
@@ -214,6 +214,9 @@
 						DevelopmentTeam = 7TD9A665TC;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Maps.Mac = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -427,12 +430,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = cardreader/cardreader.entitlements;
+				CODE_SIGN_ENTITLEMENTS = eidReader/eidReader.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = cardreader/Info.plist;
+				INFOPLIST_FILE = eidReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -442,12 +445,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = cardreader/cardreader.entitlements;
+				CODE_SIGN_ENTITLEMENTS = eidReader/eidReader.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = cardreader/Info.plist;
+				INFOPLIST_FILE = eidReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
