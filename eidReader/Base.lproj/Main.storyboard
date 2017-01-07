@@ -689,31 +689,26 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <progressIndicator wantsLayer="YES" maxValue="11" displayedWhenStopped="NO" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="LYm-lH-Cvb">
-                                <rect key="frame" x="56" y="322.5" width="32" height="32"/>
+                                <rect key="frame" x="60" y="316" width="32" height="32"/>
                             </progressIndicator>
                             <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-aj-CdO">
-                                <rect key="frame" x="20" y="262.5" width="104.5" height="150.5"/>
+                                <rect key="frame" x="20" y="252" width="112" height="161"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gjR-aj-CdO" secondAttribute="height" multiplier="7:10" id="tWr-9I-dkO"/>
                                 </constraints>
+                                <shadow key="shadow" blurRadius="2">
+                                    <color key="color" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                </shadow>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="dA3-61-187"/>
                             </imageView>
                             <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="acT-Ao-SIC">
-                                <rect key="frame" x="20" y="20" width="581" height="209.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="621" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="PNQ-am-3WJ"/>
                                 </constraints>
                             </mapView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdp-mB-Lhz">
-                                <rect key="frame" x="18" y="237.5" width="40" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Home" id="WQG-9c-flS">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-iY-yBT">
-                                <rect key="frame" x="144" y="262.5" width="304" height="150"/>
+                                <rect key="frame" x="152" y="257" width="304" height="150"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14x-IE-kut">
                                         <rect key="frame" x="0.0" y="83" width="266" height="67"/>
@@ -972,22 +967,27 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="WlD-BL-7u2">
+                                <rect key="frame" x="0.0" y="230" width="621" height="5"/>
+                            </box>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="acT-Ao-SIC" secondAttribute="trailing" constant="20" id="4ZA-Pn-Dsz"/>
+                            <constraint firstItem="acT-Ao-SIC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="1Ip-Xj-JFN"/>
                             <constraint firstItem="gjR-aj-CdO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="4xM-Qe-Xis"/>
                             <constraint firstItem="h1t-iY-yBT" firstAttribute="centerY" secondItem="gjR-aj-CdO" secondAttribute="centerY" id="8vw-aB-AZI"/>
-                            <constraint firstAttribute="bottom" secondItem="acT-Ao-SIC" secondAttribute="bottom" constant="20" id="9gk-Iy-1Ai"/>
+                            <constraint firstItem="WlD-BL-7u2" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="A9e-fn-GW3"/>
                             <constraint firstItem="LYm-lH-Cvb" firstAttribute="centerY" secondItem="gjR-aj-CdO" secondAttribute="centerY" id="FKl-50-SbM"/>
+                            <constraint firstAttribute="bottom" secondItem="acT-Ao-SIC" secondAttribute="bottom" id="K7Q-WM-4sn"/>
                             <constraint firstItem="h1t-iY-yBT" firstAttribute="leading" secondItem="gjR-aj-CdO" secondAttribute="trailing" constant="20" id="KbD-Kz-b5I"/>
-                            <constraint firstItem="acT-Ao-SIC" firstAttribute="leading" secondItem="gjR-aj-CdO" secondAttribute="leading" id="MuI-fM-lny"/>
+                            <constraint firstAttribute="trailing" secondItem="acT-Ao-SIC" secondAttribute="trailing" id="LJe-CI-eE0"/>
+                            <constraint firstItem="acT-Ao-SIC" firstAttribute="top" secondItem="gjR-aj-CdO" secondAttribute="bottom" constant="20" id="Mrt-Jf-c5P"/>
                             <constraint firstItem="gjR-aj-CdO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="N4S-Jw-rHn"/>
                             <constraint firstItem="gjR-aj-CdO" firstAttribute="height" relation="greaterThanOrEqual" secondItem="h1t-iY-yBT" secondAttribute="height" id="Ppi-TP-fXE"/>
-                            <constraint firstItem="tdp-mB-Lhz" firstAttribute="top" secondItem="gjR-aj-CdO" secondAttribute="bottom" constant="8" id="a2A-2H-LIa"/>
-                            <constraint firstItem="tdp-mB-Lhz" firstAttribute="leading" secondItem="gjR-aj-CdO" secondAttribute="leading" id="bgm-mg-2Ef"/>
+                            <constraint firstAttribute="trailing" secondItem="WlD-BL-7u2" secondAttribute="trailing" id="YSL-aN-I5z"/>
                             <constraint firstItem="LYm-lH-Cvb" firstAttribute="centerX" secondItem="gjR-aj-CdO" secondAttribute="centerX" id="gWr-Ih-qkM"/>
+                            <constraint firstItem="acT-Ao-SIC" firstAttribute="top" secondItem="WlD-BL-7u2" secondAttribute="bottom" id="ohp-kG-r87"/>
                             <constraint firstItem="acT-Ao-SIC" firstAttribute="width" secondItem="gjR-aj-CdO" secondAttribute="height" multiplier="757:196" id="pGI-XQ-foG"/>
-                            <constraint firstItem="acT-Ao-SIC" firstAttribute="top" secondItem="tdp-mB-Lhz" secondAttribute="bottom" constant="8" id="srM-cT-HqX"/>
+                            <constraint firstItem="acT-Ao-SIC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="s3j-Z6-vlH" secondAttribute="bottom" constant="20" id="sI8-gA-gA7"/>
                         </constraints>
                     </view>
                     <connections>
