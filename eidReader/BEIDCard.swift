@@ -288,21 +288,17 @@ extension TKSmartCard {
 	
 	
 	func getBasicInfo(reply: @escaping (BasicInfo?, Error?)->Void) {
-		read(file: basicInfoFile, length: 165) { (data, error) in
+		readUntilError(file: basicInfoFile) { (data, error) in
 			if let data = data {
 				reply(BasicInfo(from: data), nil)
+			} else {
+				reply(nil, error)
 			}
 		}
 	}
 	
 	func getProfileImage(updateProgress: ((Double)->Void)? = nil, reply: @escaping (Data?, Error?)->Void) {
-		readUntilError(file: photoFile, updateProgress: updateProgress) { (data, error) in
-			if let error = error {
-				reply(nil, error)
-			} else if let data = data {
-				reply(data, nil)
-			}
-		}
+		readUntilError(file: photoFile, updateProgress: updateProgress, reply: reply)
 	}
 }
 
