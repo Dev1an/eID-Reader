@@ -896,7 +896,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhZ-1V-wOs">
                                                         <rect key="frame" x="196" y="0.0" width="110" height="17"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="8 december 2017" id="v6e-9A-SKh">
-                                                            <dateFormatter key="formatter" dateStyle="long" doesRelativeDateFormatting="YES" id="Iqa-cQ-Fcx"/>
+                                                            <dateFormatter key="formatter" dateStyle="medium" doesRelativeDateFormatting="YES" id="Iqa-cQ-Fcx"/>
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
