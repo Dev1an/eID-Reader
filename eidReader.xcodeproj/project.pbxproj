@@ -52,6 +52,7 @@
 		746300B71E14259E00ECD5A1 /* BEIDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEIDCard.swift; sourceTree = "<group>"; };
 		74FCE6D11E15966100CDF841 /* eidReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eidReader.entitlements; sourceTree = "<group>"; };
 		74FCE6D21E15972A00CDF841 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		74FCE6D61E15BAE400CDF841 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +330,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7463008E1E13EFC200ECD5A1 /* Base */,
+				74FCE6D61E15BAE400CDF841 /* nl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -340,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -389,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
