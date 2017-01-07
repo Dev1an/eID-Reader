@@ -255,4 +255,9 @@ extension DateFormatter {
 		self.init()
 		self.dateFormat = format
 	}
+	
+	convenience init(style: DateFormatter.Style) {
+		self.init()
+		self.dateStyle = style
+	}
 }

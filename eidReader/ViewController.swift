@@ -19,7 +19,8 @@ class ViewController: NSViewController {
 	@IBOutlet weak var birthdayField: NSTextField!
 	@IBOutlet weak var nationalIDField: NSTextField!
 	@IBOutlet weak var cardNumberField: NSTextField!
-	@IBOutlet weak var validityIntervalField: NSTextField!
+	@IBOutlet weak var validStartField: NSTextField!
+	@IBOutlet weak var validEndField: NSTextField!
 	@IBOutlet weak var releasePlaceField: NSTextField!
 	@IBOutlet weak var map: MKMapView!
 	
@@ -77,7 +78,8 @@ class ViewController: NSViewController {
 			self.birthdayField.stringValue = ""
 			self.nationalIDField.stringValue = ""
 			self.cardNumberField.stringValue = ""
-			self.validityIntervalField.stringValue = ""
+			self.validStartField.stringValue = ""
+			self.validEndField.stringValue = ""
 			self.releasePlaceField.stringValue = ""
 			if let address = self.currentAddress {self.map.removeAnnotation(address)}
 		}
@@ -122,7 +124,8 @@ class ViewController: NSViewController {
 									self.nationalIDField.stringValue = basicInfo.nationalIDNumber
 									
 									self.cardNumberField.stringValue = basicInfo.cardNumber
-									self.validityIntervalField.objectValue = DateInterval(start: basicInfo.validityStart, end: basicInfo.validityEnd)
+									self.validStartField.objectValue = basicInfo.validityStart
+									self.validEndField.objectValue = basicInfo.validityEnd
 									self.releasePlaceField.stringValue = basicInfo.releasePlace
 								}
 							}
@@ -153,4 +156,3 @@ class ViewController: NSViewController {
 
 
 }
-
