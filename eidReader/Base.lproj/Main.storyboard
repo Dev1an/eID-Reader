@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.MapKitIBPlugin" version="11762"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -702,287 +701,187 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="PNQ-am-3WJ"/>
                                 </constraints>
                             </mapView>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-iY-yBT">
-                                <rect key="frame" x="152" y="257" width="304" height="150"/>
-                                <subviews>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14x-IE-kut">
-                                        <rect key="frame" x="0.0" y="83" width="266" height="67"/>
-                                        <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-M9-6Zr">
-                                                <rect key="frame" x="0.0" y="50" width="179" height="17"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLQ-Fr-4ZT">
-                                                        <rect key="frame" x="-2" y="0.0" width="148" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Damiaan Lars M Dufaux" id="Cdr-Qe-pfz">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpO-KH-l0u">
-                                                        <rect key="frame" x="150" y="0.0" width="31" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Belg" id="b3j-rf-2F8">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVm-Ys-qnB">
-                                                <rect key="frame" x="0.0" y="25" width="226" height="17"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfi-ad-txd">
-                                                        <rect key="frame" x="-2" y="0.0" width="47" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Born in" id="2XN-4V-re7">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cy-nx-sNS">
-                                                        <rect key="frame" x="49" y="0.0" width="35" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dalle" id="CpP-8a-Kza">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5g-Au-NGO">
-                                                        <rect key="frame" x="88" y="0.0" width="20" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="on" id="HHw-uB-mmy">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOv-oo-e0v">
-                                                        <rect key="frame" x="112" y="0.0" width="116" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="12 november 1995" id="fw7-37-CZf">
-                                                            <dateFormatter key="formatter" dateStyle="full" id="DSF-na-ap8"/>
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYh-CR-5nW">
-                                                <rect key="frame" x="0.0" y="0.0" width="266" height="17"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tk-C6-uee">
-                                                        <rect key="frame" x="-2" y="0.0" width="163" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ID of the National Register" id="SbF-x3-B11">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ya-2b-kqP">
-                                                        <rect key="frame" x="165" y="0.0" width="103" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="95.11.12-001-62" id="tD7-K1-y9Y">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                        </subviews>
-                                        <visibilityPriorities>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                        </visibilityPriorities>
-                                        <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                        </customSpacing>
-                                    </stackView>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3j-Z6-vlH">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="67"/>
-                                        <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7FK-1z-xQ1">
-                                                <rect key="frame" x="0.0" y="50" width="127" height="17"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ab-Xw-PIX">
-                                                        <rect key="frame" x="-2" y="0.0" width="33" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Card" id="HXp-tJ-ixq">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trq-TH-RYt">
-                                                        <rect key="frame" x="35" y="0.0" width="94" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="123456789101" id="kIb-Xd-3Xu">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0zl-DO-aLg">
-                                                <rect key="frame" x="0.0" y="25" width="304" height="17"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndE-1D-oat">
-                                                        <rect key="frame" x="-2" y="0.0" width="66" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Valid from" id="n2z-o1-IxF">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agz-HH-rck">
-                                                        <rect key="frame" x="68" y="0.0" width="90" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="8 januari 2012" id="mdB-j1-6a6">
-                                                            <dateFormatter key="formatter" dateStyle="long" doesRelativeDateFormatting="YES" id="X2W-Qt-u2M"/>
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBv-7p-db3">
-                                                        <rect key="frame" x="162" y="0.0" width="30" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="until" id="PgG-UZ-LHC">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhZ-1V-wOs">
-                                                        <rect key="frame" x="196" y="0.0" width="110" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="8 december 2017" id="v6e-9A-SKh">
-                                                            <dateFormatter key="formatter" dateStyle="medium" doesRelativeDateFormatting="YES" id="Iqa-cQ-Fcx"/>
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tK7-LN-fxz">
-                                                <rect key="frame" x="0.0" y="0.0" width="93" height="17"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il8-Gp-TLS">
-                                                        <rect key="frame" x="-2" y="0.0" width="58" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Issued in" id="Onz-Qt-0sE">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCF-F4-jCe">
-                                                        <rect key="frame" x="60" y="0.0" width="35" height="17"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dalle" id="mml-AI-cef">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                        </subviews>
-                                        <visibilityPriorities>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                        </visibilityPriorities>
-                                        <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                        </customSpacing>
-                                    </stackView>
-                                </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLQ-Fr-4ZT">
+                                <rect key="frame" x="150" y="390" width="148" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Damiaan Lars M Dufaux" id="Cdr-Qe-pfz">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpO-KH-l0u">
+                                <rect key="frame" x="302" y="390" width="31" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Belg" id="b3j-rf-2F8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfi-ad-txd">
+                                <rect key="frame" x="150" y="365" width="47" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Born in" id="2XN-4V-re7">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cy-nx-sNS">
+                                <rect key="frame" x="201" y="365" width="35" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dalle" id="CpP-8a-Kza">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5g-Au-NGO">
+                                <rect key="frame" x="240" y="365" width="20" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="on" id="HHw-uB-mmy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOv-oo-e0v">
+                                <rect key="frame" x="264" y="365" width="116" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="12 november 1995" id="fw7-37-CZf">
+                                    <dateFormatter key="formatter" dateStyle="full" id="DSF-na-ap8"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tk-C6-uee">
+                                <rect key="frame" x="150" y="340" width="163" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ID of the National Register" id="SbF-x3-B11">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ya-2b-kqP">
+                                <rect key="frame" x="317" y="340" width="103" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="95.11.12-001-62" id="tD7-K1-y9Y">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ab-Xw-PIX">
+                                <rect key="frame" x="150" y="307" width="33" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Card" id="HXp-tJ-ixq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trq-TH-RYt">
+                                <rect key="frame" x="187" y="307" width="94" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="123456789101" id="kIb-Xd-3Xu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndE-1D-oat">
+                                <rect key="frame" x="150" y="282" width="66" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Valid from" id="n2z-o1-IxF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agz-HH-rck">
+                                <rect key="frame" x="220" y="282" width="111" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="8 december 2012" id="mdB-j1-6a6">
+                                    <dateFormatter key="formatter" dateStyle="long" doesRelativeDateFormatting="YES" id="X2W-Qt-u2M"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBv-7p-db3">
+                                <rect key="frame" x="335" y="282" width="30" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="until" id="PgG-UZ-LHC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhZ-1V-wOs">
+                                <rect key="frame" x="369" y="282" width="90" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="8 januari 2017" id="v6e-9A-SKh">
+                                    <dateFormatter key="formatter" dateStyle="medium" doesRelativeDateFormatting="YES" id="Iqa-cQ-Fcx"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il8-Gp-TLS">
+                                <rect key="frame" x="150" y="257" width="58" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Issued in" id="Onz-Qt-0sE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCF-F4-jCe">
+                                <rect key="frame" x="212" y="257" width="35" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dalle" id="mml-AI-cef">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="WlD-BL-7u2">
                                 <rect key="frame" x="0.0" y="230" width="621" height="5"/>
                             </box>
                         </subviews>
                         <constraints>
                             <constraint firstItem="acT-Ao-SIC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="1Ip-Xj-JFN"/>
+                            <constraint firstItem="1ab-Xw-PIX" firstAttribute="top" secondItem="7Tk-C6-uee" secondAttribute="bottom" constant="16" id="1tk-Q3-obZ"/>
+                            <constraint firstItem="zhZ-1V-wOs" firstAttribute="leading" secondItem="vBv-7p-db3" secondAttribute="trailing" constant="8" id="384-aR-aoy"/>
                             <constraint firstItem="gjR-aj-CdO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="4xM-Qe-Xis"/>
-                            <constraint firstItem="h1t-iY-yBT" firstAttribute="centerY" secondItem="gjR-aj-CdO" secondAttribute="centerY" id="8vw-aB-AZI"/>
+                            <constraint firstItem="eCF-F4-jCe" firstAttribute="baseline" secondItem="Il8-Gp-TLS" secondAttribute="baseline" id="5ov-b7-qvf"/>
                             <constraint firstItem="WlD-BL-7u2" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="A9e-fn-GW3"/>
+                            <constraint firstItem="7Tk-C6-uee" firstAttribute="leading" secondItem="ZLQ-Fr-4ZT" secondAttribute="leading" id="EA7-e5-dOn"/>
                             <constraint firstItem="LYm-lH-Cvb" firstAttribute="centerY" secondItem="gjR-aj-CdO" secondAttribute="centerY" id="FKl-50-SbM"/>
+                            <constraint firstItem="ZLQ-Fr-4ZT" firstAttribute="leading" secondItem="gjR-aj-CdO" secondAttribute="trailing" constant="20" id="FQr-TS-WdE"/>
+                            <constraint firstItem="3Cy-nx-sNS" firstAttribute="baseline" secondItem="Wfi-ad-txd" secondAttribute="baseline" id="GJx-Te-hfS"/>
+                            <constraint firstItem="rpO-KH-l0u" firstAttribute="baseline" secondItem="ZLQ-Fr-4ZT" secondAttribute="baseline" id="I5U-Jz-wTk"/>
                             <constraint firstAttribute="bottom" secondItem="acT-Ao-SIC" secondAttribute="bottom" id="K7Q-WM-4sn"/>
-                            <constraint firstItem="h1t-iY-yBT" firstAttribute="leading" secondItem="gjR-aj-CdO" secondAttribute="trailing" constant="20" id="KbD-Kz-b5I"/>
+                            <constraint firstItem="Wfi-ad-txd" firstAttribute="leading" secondItem="ZLQ-Fr-4ZT" secondAttribute="leading" id="KGO-Ud-lbt"/>
                             <constraint firstAttribute="trailing" secondItem="acT-Ao-SIC" secondAttribute="trailing" id="LJe-CI-eE0"/>
                             <constraint firstItem="acT-Ao-SIC" firstAttribute="top" secondItem="gjR-aj-CdO" secondAttribute="bottom" constant="20" id="Mrt-Jf-c5P"/>
                             <constraint firstItem="gjR-aj-CdO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="N4S-Jw-rHn"/>
-                            <constraint firstItem="gjR-aj-CdO" firstAttribute="height" relation="greaterThanOrEqual" secondItem="h1t-iY-yBT" secondAttribute="height" constant="5" id="Ppi-TP-fXE"/>
+                            <constraint firstItem="7Tk-C6-uee" firstAttribute="top" secondItem="Wfi-ad-txd" secondAttribute="bottom" constant="8" id="NFF-Ve-eJT"/>
+                            <constraint firstItem="1ab-Xw-PIX" firstAttribute="leading" secondItem="ZLQ-Fr-4ZT" secondAttribute="leading" id="OSN-Xt-sqL"/>
+                            <constraint firstItem="zhZ-1V-wOs" firstAttribute="baseline" secondItem="ndE-1D-oat" secondAttribute="baseline" id="Ot0-Sa-Je5"/>
+                            <constraint firstItem="Il8-Gp-TLS" firstAttribute="top" secondItem="ndE-1D-oat" secondAttribute="bottom" constant="8" id="QHb-Rd-CYe"/>
+                            <constraint firstItem="Wfi-ad-txd" firstAttribute="top" secondItem="ZLQ-Fr-4ZT" secondAttribute="bottom" constant="8" id="Qa0-wK-P9M"/>
+                            <constraint firstItem="ndE-1D-oat" firstAttribute="leading" secondItem="ZLQ-Fr-4ZT" secondAttribute="leading" id="Rlv-ns-qMa"/>
+                            <constraint firstItem="OOv-oo-e0v" firstAttribute="baseline" secondItem="Wfi-ad-txd" secondAttribute="baseline" id="TVS-2a-w2j"/>
+                            <constraint firstItem="Il8-Gp-TLS" firstAttribute="leading" secondItem="ZLQ-Fr-4ZT" secondAttribute="leading" id="Tbf-wW-LKo"/>
+                            <constraint firstItem="V5g-Au-NGO" firstAttribute="baseline" secondItem="Wfi-ad-txd" secondAttribute="baseline" id="U0H-kX-AbY"/>
+                            <constraint firstItem="2Ya-2b-kqP" firstAttribute="baseline" secondItem="7Tk-C6-uee" secondAttribute="baseline" id="WlB-MV-9dv"/>
+                            <constraint firstItem="2Ya-2b-kqP" firstAttribute="leading" secondItem="7Tk-C6-uee" secondAttribute="trailing" constant="8" id="Xqa-ae-dSY"/>
                             <constraint firstAttribute="trailing" secondItem="WlD-BL-7u2" secondAttribute="trailing" id="YSL-aN-I5z"/>
+                            <constraint firstItem="V5g-Au-NGO" firstAttribute="leading" secondItem="3Cy-nx-sNS" secondAttribute="trailing" constant="8" id="bcU-ui-flV"/>
+                            <constraint firstItem="rpO-KH-l0u" firstAttribute="leading" secondItem="ZLQ-Fr-4ZT" secondAttribute="trailing" constant="8" id="byZ-ze-MsS"/>
+                            <constraint firstItem="vBv-7p-db3" firstAttribute="leading" secondItem="Agz-HH-rck" secondAttribute="trailing" constant="8" id="cue-Eu-19t"/>
+                            <constraint firstItem="3Cy-nx-sNS" firstAttribute="leading" secondItem="Wfi-ad-txd" secondAttribute="trailing" constant="8" id="cwE-Wy-qg1"/>
+                            <constraint firstItem="Agz-HH-rck" firstAttribute="baseline" secondItem="ndE-1D-oat" secondAttribute="baseline" id="fFe-te-pkD"/>
+                            <constraint firstItem="ZLQ-Fr-4ZT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gjR-aj-CdO" secondAttribute="top" constant="6" id="gGm-rB-NDb"/>
                             <constraint firstItem="LYm-lH-Cvb" firstAttribute="centerX" secondItem="gjR-aj-CdO" secondAttribute="centerX" id="gWr-Ih-qkM"/>
+                            <constraint firstItem="Trq-TH-RYt" firstAttribute="baseline" secondItem="1ab-Xw-PIX" secondAttribute="baseline" id="hYe-bn-R9F"/>
+                            <constraint firstItem="ndE-1D-oat" firstAttribute="top" secondItem="1ab-Xw-PIX" secondAttribute="bottom" constant="8" id="iKh-bD-AOk"/>
+                            <constraint firstItem="eCF-F4-jCe" firstAttribute="leading" secondItem="Il8-Gp-TLS" secondAttribute="trailing" constant="8" id="nAH-6s-u4c"/>
                             <constraint firstItem="acT-Ao-SIC" firstAttribute="top" secondItem="WlD-BL-7u2" secondAttribute="bottom" id="ohp-kG-r87"/>
                             <constraint firstItem="acT-Ao-SIC" firstAttribute="width" secondItem="gjR-aj-CdO" secondAttribute="height" multiplier="757:196" id="pGI-XQ-foG"/>
-                            <constraint firstItem="acT-Ao-SIC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="s3j-Z6-vlH" secondAttribute="bottom" constant="20" id="sI8-gA-gA7"/>
+                            <constraint firstItem="vBv-7p-db3" firstAttribute="baseline" secondItem="ndE-1D-oat" secondAttribute="baseline" id="rRX-H5-fey"/>
+                            <constraint firstItem="1ab-Xw-PIX" firstAttribute="centerY" secondItem="gjR-aj-CdO" secondAttribute="centerY" constant="17" id="wUc-R2-gM5"/>
+                            <constraint firstItem="OOv-oo-e0v" firstAttribute="leading" secondItem="V5g-Au-NGO" secondAttribute="trailing" constant="8" id="x8T-VY-8vY"/>
+                            <constraint firstItem="Agz-HH-rck" firstAttribute="leading" secondItem="ndE-1D-oat" secondAttribute="trailing" constant="8" id="xIW-yI-9mp"/>
+                            <constraint firstItem="Trq-TH-RYt" firstAttribute="leading" secondItem="1ab-Xw-PIX" secondAttribute="trailing" constant="8" id="xmj-Ke-wdj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1002,7 +901,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="754"/>
+            <point key="canvasLocation" x="75.5" y="753.5"/>
         </scene>
     </scenes>
 </document>
