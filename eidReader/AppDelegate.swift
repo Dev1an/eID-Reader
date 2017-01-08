@@ -52,7 +52,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-		return currentSlot?.state == .validCard
+		if (menuItem.tag == 2) {
+			return true
+		} else {
+			return currentSlot?.state == .validCard
+		}
 	}
 	
 	func createDocumentFromCurrentCard() -> Document {
@@ -78,6 +82,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			currentAddress!.coordinate = coordinate
 			viewController?.address = currentAddress
 		}
+	}
+	
+	@IBAction func showMainWindow(_ sender: Any?) {
+		showMainWindow()
 	}
 	
 	func showMainWindow() {
