@@ -35,6 +35,8 @@ class ViewController: NSViewController {
 		profileImageLayer = profileImage.layer
 		profileImage.layer?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1010948504).cgColor
 		profileImageLayer?.cornerRadius = 3
+		
+		map.delegate = self
 	}
 	
 	var address: Address? {
@@ -81,7 +83,26 @@ class ViewController: NSViewController {
 			}
 		}
 	}
-	
+}
+
+extension ViewController: MKMapViewDelegate {
+	public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin")
+		if annotationView == nil {
+			annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+		} else {
+			annotationView!.annotation = annotation
+		}
+		annotationView!.canShowCallout = true
+		if #available(OSX 10.12, *) {
+			let label = NSTextField(labelWithString: annotation.subtitle!!)
+			label.isSelectable = true
+			label.font = NSFont.systemFont(ofSize: 12)
+			label.textColor = NSColor.secondaryLabelColor
+			annotationView!.detailCalloutAccessoryView = label
+		}
+		return annotationView
+	}
 }
 
 class CardView: NSView {
