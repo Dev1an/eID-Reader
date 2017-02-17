@@ -18,8 +18,10 @@ class ViewController: NSViewController {
 	@IBOutlet weak var imageProgressIndicator: NSProgressIndicator!
 	@IBOutlet weak var nameField: NSTextField!
 	@IBOutlet weak var nationalityField: NSTextField!
+	@IBOutlet weak var sexField: NSTextField!
 	@IBOutlet weak var birthPlaceField: NSTextField!
 	@IBOutlet weak var birthdayField: NSTextField!
+	@IBOutlet weak var addressField: NSTextField!
 	@IBOutlet weak var nationalIDField: NSTextField!
 	@IBOutlet weak var cardNumberField: NSTextField!
 	@IBOutlet weak var validStartField: NSTextField!
@@ -35,8 +37,6 @@ class ViewController: NSViewController {
 		profileImageLayer = profileImage.layer
 		profileImage.layer?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1010948504).cgColor
 		profileImageLayer?.cornerRadius = 3
-		
-		map.delegate = self
 	}
 	
 	var address: Address? {
@@ -47,9 +47,12 @@ class ViewController: NSViewController {
 		}
 		didSet {
 			if let address = address {
+				addressField.stringValue = "\(address.street), \(address.city) \(address.postalCode)"
 				map.addAnnotation(address)
 				map.setCenter(address.coordinate, animated: true)
 				map.selectAnnotation(address, animated: true)
+			} else {
+				addressField.stringValue = ""
 			}
 		}
 	}
@@ -59,6 +62,7 @@ class ViewController: NSViewController {
 			if let basicInfo = basicInfo {
 				nameField.stringValue = "\(basicInfo.firstName) \(basicInfo.otherName) \(basicInfo.lastName)"
 				nationalityField.stringValue = basicInfo.nationality
+				sexField.stringValue = basicInfo.sex == .male ? "man" : "vrouw"
 				birthPlaceField.stringValue = basicInfo.birthPlace
 				birthdayField.objectValue = basicInfo.birthday
 				nationalIDField.stringValue = basicInfo.nationalIDNumber
@@ -73,6 +77,7 @@ class ViewController: NSViewController {
 				self.imageProgressIndicator.isHidden = true
 				self.nameField.stringValue = ""
 				self.nationalityField.stringValue = ""
+				self.sexField.stringValue = ""
 				self.birthPlaceField.stringValue = ""
 				self.birthdayField.stringValue = ""
 				self.nationalIDField.stringValue = ""
@@ -85,31 +90,17 @@ class ViewController: NSViewController {
 	}
 }
 
-extension ViewController: MKMapViewDelegate {
-	public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin")
-		if annotationView == nil {
-			annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-		} else {
-			annotationView!.annotation = annotation
-		}
-		annotationView!.canShowCallout = true
-		if #available(OSX 10.12, *) {
-			let label = NSTextField(labelWithString: annotation.subtitle!!)
-			label.isSelectable = true
-			label.font = NSFont.systemFont(ofSize: 12)
-			label.textColor = NSColor.secondaryLabelColor
-			annotationView!.detailCalloutAccessoryView = label
-		}
-		return annotationView
-	}
-}
-
 class CardView: NSView {
 	override var acceptsFirstResponder: Bool { return true }
 	
 	@IBAction override func print(_ sender: Any?) {
 		Swift.print("printing view")
 		NSPrintOperation(view: self).run()
+	}
+}
+
+class NoInsetsTextField: NSTextField {
+	override var alignmentRectInsets: EdgeInsets {
+		return EdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
 	}
 }
