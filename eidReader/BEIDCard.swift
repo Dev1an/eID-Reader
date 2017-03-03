@@ -160,7 +160,9 @@ class BasicInfo: NSObject, NSCoding {
 	
 	var nationalIDNumber : String {
 		let checksum = 97 - (1000 * Int(BasicInfo.nationalIDNumberFormatter.string(from: birthday))! + Int(birthNumber)) % 97
-		return BasicInfo.nationalIDNumberDottedFormatter.string(from: birthday) + "-\(birthNumber).\(checksum)"
+		let paddedBirthNumber = String(format: "%03d", birthNumber)
+		let paddedChecksum    = String(format: "%02d", checksum)
+		return BasicInfo.nationalIDNumberDottedFormatter.string(from: birthday) + "-\(paddedBirthNumber).\(paddedChecksum)"
 	}
 }
 
