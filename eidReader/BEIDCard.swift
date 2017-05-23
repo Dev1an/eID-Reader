@@ -291,10 +291,10 @@ extension TKSmartCard {
 	
 	func getBasicInfo(reply: @escaping (BasicInfo?, Error?)->Void) {
 		readUntilError(file: basicInfoFile) { (data, error) in
-			if let data = data {
-				reply(BasicInfo(from: data), nil)
-			} else {
+			if let error = error {
 				reply(nil, error)
+			} else if let data = data {
+				reply(BasicInfo(from: data), nil)
 			}
 		}
 	}

@@ -136,26 +136,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			card.beginSession{ (success, error) in
 				if success {
 					card.getAddress(geocodeCompletionHandler: self.updateHomeCoordinate) { (address, error) in
-						card.getBasicInfo { (basicInfo, error) in
-							card.getProfileImage(updateProgress: self.updateImageProgress) { (imageData, error) in
-								if let imageData = imageData, let image = NSImage(data: imageData) {
+						if let error = error {
+							DispatchQueue.main.async {
+								let alert = NSAlert(error: error)
+								alert.runModal()
+							}
+						} else {
+							card.getBasicInfo { (basicInfo, error) in
+								card.getProfileImage(updateProgress: self.updateImageProgress) { (imageData, error) in
+									if let imageData = imageData, let image = NSImage(data: imageData) {
+										DispatchQueue.main.async {
+											self.profileImage = image
+											self.viewController?.profileImage.image = image
+										}
+									}
+									card.endSession()
+								}
+								DispatchQueue.main.async { self.viewController?.imageProgressIndicator.isHidden = false }
+								if let basicInfo = basicInfo {
 									DispatchQueue.main.async {
-										self.profileImage = image
-										self.viewController?.profileImage.image = image
+										self.basicInfo = basicInfo
+										self.viewController?.basicInfo = basicInfo
 									}
 								}
-								card.endSession()
 							}
-							DispatchQueue.main.async { self.viewController?.imageProgressIndicator.isHidden = false }
-							if let basicInfo = basicInfo {
-								DispatchQueue.main.async {
-									self.basicInfo = basicInfo
-									self.viewController?.basicInfo = basicInfo
-								}
+							if let address = address {
+								self.currentAddress = address
 							}
-						}
-						if let address = address {
-							self.currentAddress = address
 						}
 					}
 				}
