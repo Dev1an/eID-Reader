@@ -304,7 +304,7 @@ extension TKSmartCard {
 	}
 }
 
-func loadDictionary(from data: MutableRandomAccessSlice<Data>) -> [UInt8: CountableRange<Int>] {
+func loadDictionary(from data: MutableRangeReplaceableRandomAccessSlice<Data>) -> [UInt8: CountableRange<Int>] {
 	var dictionary = [UInt8: CountableRange<Int>]()
 	var cursor = 2
 	while cursor<data.endIndex && data[cursor-2] != 0 {
