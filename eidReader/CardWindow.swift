@@ -70,6 +70,13 @@ class ViewController: NSViewController {
 				cardNumberField.stringValue = basicInfo.cardNumber
 				validStartField.objectValue = basicInfo.validityStart
 				validEndField.objectValue = basicInfo.validityEnd
+				if basicInfo.validityEnd < Date() {
+					validStartField.textColor = NSColor.red
+					validEndField.textColor = NSColor.red
+				} else {
+					validStartField.textColor = NSColor.textColor
+					validEndField.textColor = NSColor.textColor
+				}
 				releasePlaceField.stringValue = basicInfo.releasePlace
 			} else {
 				self.profileImage.image = nil
@@ -94,7 +101,6 @@ class CardView: NSView {
 	override var acceptsFirstResponder: Bool { return true }
 	
 	@IBAction override func print(_ sender: Any?) {
-		Swift.print("printing view")
 		NSPrintOperation(view: self).run()
 	}
 }
