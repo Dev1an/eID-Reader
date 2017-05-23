@@ -139,6 +139,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 						if let error = error {
 							DispatchQueue.main.async {
 								let alert = NSAlert(error: error)
+								alert.informativeText = alert.messageText
+								alert.messageText = "An error occured while reading the card."
 								alert.runModal()
 							}
 						} else {
