@@ -1,4 +1,4 @@
-# eidReader
+<h1 align=center> eidReader </h1>
 
 ![screenshot](screenshot.png)
 
