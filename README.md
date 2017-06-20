@@ -21,6 +21,7 @@ The following information is available:
 - Identification number of the National Register
 - Card number
 - Validity period
+- Place of issue
 
 All information can be saved and/or printed.
 
