@@ -1,7 +1,49 @@
-# eID-Reader
-A macOS application to view and save information from Belgian electronic ID cards also known as (beID or belgian eID) without the need to install additional drivers or java software.
+<h1 align=center> eidReader </h1>
 
 ![screenshot](screenshot.png)
+
+<table>
+<thead>
+<tr>
+<th width=50%>English</th>
+<th>Nederlands</th>
+</tr>
+</thead>
+<tr>
+<td>A macOS application to read information from Belgian electronic ID cards without the need to install additional drivers or java software.
+
+The following information is available:
+- Profile picture
+- First and last name
+- Sex
+- Place of birth and birthday
+- Home address (textual and visual using maps)
+- Identification number of the National Register
+- Card number
+- Validity period
+- Place of issue
+
+All information can be saved and/or printed.
+
+The application runs in an App Sandbox (Apples security mechanism) without internet connection, and is completely open source. So you can be sure that it does not leak confidential information.
+</td><td>Met deze kaartlezer kan je eenvoudig de informatie van een Belgische identiteitskaart uitlezen. Er is geen driver of java vereist.
+
+Volgende informatie is beschikbaar:
+- Profielfoto
+- Naam, Achternaam
+- Geslacht
+- Geboorteplaats, -datum
+- Woonplaats (tekstueel en via kaarten)
+- Rijksregisternummer
+- Kaartnummer
+- Geldigheidsperiode van de kaart
+- Afhaallocatie
+
+Alle informatie kan opgeslagen en/of afgedrukt worden.
+
+Deze applicatie maakt gebruik van Apples "App Sandbox" technologie, heeft geen netwerktoegang en is volledig open source. Je kan er dus zeker van zijn dat het geen vertrouwelijke informatie doorgeeft (of lekt).</td>
+</tr>
+</table>
 
 ## Technology
 
@@ -11,8 +53,8 @@ This application uses Apple's standard `CryptoTokenKit` framework to communicate
 
 ## Installation
 
-<a href="https://itunes.apple.com/us/app/eidreader/id1190651975?l=nl&ls=1&mt=12">
-![Download on the App Store Badge](https://cdn.rawgit.com/Dev1an/eID-Reader/master/Download_on_the_App_Store_Badge_US-UK.svg)
-</a>
+Choose one of the following providers:
 
-Download via [GitHub](https://github.com/Dev1an/eID-Reader/releases/latest)
+| Apple | GitHub |
+| ----- | ------ |
+| <a href="https://itunes.apple.com/us/app/eidreader/id1190651975?l=nl&ls=1&mt=12"><img src="https://cdn.rawgit.com/Dev1an/eID-Reader/master/Download_on_the_App_Store_Badge_US-UK.svg" alt="Download on the App Store Badge" /></a> | Download via [GitHub](https://github.com/Dev1an/eID-Reader/releases/latest) |
