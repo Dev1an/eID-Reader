@@ -24,7 +24,7 @@ The following information is available:
 
 All information can be saved and/or printed.
 
-The application runs in an App Sandbox (without internet connection) and is open source. So you can be sure that it does not leak confidential information to any party.
+The application runs in an App Sandbox (without internet connection) and is open source. So you can be sure that it does not leak confidential information.
 </td><td>Met deze kaartlezer kan je eenvoudig de informatie van een Belgische identiteitskaart uitlezen. Er is geen driver of java vereist.
 
 Volgende informatie is beschikbaar:
@@ -40,7 +40,7 @@ Volgende informatie is beschikbaar:
 
 Alle informatie kan opgeslagen en/of afgedrukt worden.
 
-Deze applicatie maakt gebruik van Apples "App Sandbox" technologie, heeft geen netwerktoegang en is volledig open source. Je kan er dus zeker van zijn dat het geen vertrouwelijke informatie doorgeeft (of lekt) aan andere partijen.</td>
+Deze applicatie maakt gebruik van Apples "App Sandbox" technologie, heeft geen netwerktoegang en is volledig open source. Je kan er dus zeker van zijn dat het geen vertrouwelijke informatie doorgeeft (of lekt).</td>
 </tr>
 </table>
 
