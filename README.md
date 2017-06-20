@@ -12,7 +12,7 @@
 <tr>
 <td>A macOS application to read information from Belgian electronic ID cards (also known as beID or belgian eID) without the need to install additional drivers or java software.
 
-Following information is available:
+The following information is available:
 - Profile picture
 - First and last name
 - Sex
