@@ -42,11 +42,6 @@ Deze applicatie maakt gebruik van Apples "App Sandbox" technologie, heeft geen n
 </tr>
 </table>
 
-### English
-
-### Nederlands
-
-
 ![screenshot](screenshot.png)
 
 ## Technology
