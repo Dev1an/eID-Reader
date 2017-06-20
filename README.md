@@ -1,5 +1,7 @@
 # eidReader
 
+![screenshot](screenshot.png)
+
 <table>
 <thead>
 <tr>
@@ -41,8 +43,6 @@ Alle informatie kan opgeslagen en/of afgedrukt worden.
 Deze applicatie maakt gebruik van Apples "App Sandbox" technologie, heeft geen netwerktoegang en is volledig open source. Je kan er dus zeker van zijn dat het geen vertrouwelijke informatie doorgeeft (of lekt) aan andere partijen.</td>
 </tr>
 </table>
-
-![screenshot](screenshot.png)
 
 ## Technology
 
