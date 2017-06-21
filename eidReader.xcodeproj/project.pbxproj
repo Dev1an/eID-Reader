@@ -53,6 +53,7 @@
 		746300A61E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
 		746300B71E14259E00ECD5A1 /* BEIDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEIDCard.swift; sourceTree = "<group>"; };
+		74EB7CDC1EFAF46E00C959DC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		74FCE6D11E15966100CDF841 /* eidReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eidReader.entitlements; sourceTree = "<group>"; };
 		74FCE6D21E15972A00CDF841 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		74FCE6D61E15BAE400CDF841 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
@@ -339,6 +340,7 @@
 			children = (
 				7463008E1E13EFC200ECD5A1 /* Base */,
 				74FCE6D61E15BAE400CDF841 /* nl */,
+				74EB7CDC1EFAF46E00C959DC /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

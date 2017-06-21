@@ -70,8 +70,17 @@ class BasicInfo: NSObject, NSCoding {
 		case fileStructureVersion = 0, cardNumber, chipNumber, validityStart, validityEnd, releasePlace, nationalIdNumber, lastName, firstName, otherName, nationality, birthPlace, birthDate, sex, nobleCondition, documentType, specialStatus, pictureHash, duplicate, specialOrganisation, memberOfFamily, protection
 	}
 	
-	enum Sex: UInt8 {
+	enum Sex: UInt8, CustomStringConvertible {
 		case female, male
+		
+		var description: String {
+			switch self {
+			case .female:
+				return NSLocalizedString("female", comment: "Sex")
+			case .male:
+				return NSLocalizedString("male", comment: "Sex")
+			}
+		}
 	}
 	
 	enum ArchiveKey: String {

@@ -3,7 +3,7 @@
 "1UK-8n-QPP.title" = "Customize Toolbar…";
 
 /* Class = "NSMenuItem"; title = "eidReader"; ObjectID = "1Xt-HY-uBw"; */
-"1Xt-HY-uBw.title" = "eidLezer";
+"1Xt-HY-uBw.title" = "eidReader";
 
 /* Class = "NSMenu"; title = "Find"; ObjectID = "1b7-l0-nxx"; */
 "1b7-l0-nxx.title" = "Find";
@@ -11,8 +11,8 @@
 /* Class = "NSMenuItem"; title = "Lower"; ObjectID = "1tx-W0-xDw"; */
 "1tx-W0-xDw.title" = "Lower";
 
-/* Class = "NSTextFieldCell"; title = "Geboren in"; ObjectID = "2XN-4V-re7"; */
-"2XN-4V-re7.title" = "Geboren in";
+/* Class = "NSTextFieldCell"; title = "Born in"; ObjectID = "2XN-4V-re7"; */
+"2XN-4V-re7.title" = "Né à";
 
 /* Class = "NSMenuItem"; title = "Raise"; ObjectID = "2h7-ER-AoG"; */
 "2h7-ER-AoG.title" = "Raise";
@@ -83,6 +83,9 @@
 /* Class = "NSTextFieldCell"; title = "Dalle"; ObjectID = "CpP-8a-Kza"; */
 "CpP-8a-Kza.title" = "Dalle";
 
+/* Class = "NSMenuItem"; title = "Show reader"; ObjectID = "CqK-PI-En0"; */
+"CqK-PI-En0.title" = "Show reader";
+
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "Close";
 
@@ -125,11 +128,11 @@
 /* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "HFo-cy-zxI"; */
 "HFo-cy-zxI.title" = "Show Spelling and Grammar";
 
-/* Class = "NSTextFieldCell"; title = "op"; ObjectID = "HHw-uB-mmy"; */
-"HHw-uB-mmy.title" = "op";
+/* Class = "NSTextFieldCell"; title = "on"; ObjectID = "HHw-uB-mmy"; */
+"HHw-uB-mmy.title" = "le";
 
-/* Class = "NSTextFieldCell"; title = "Kaart"; ObjectID = "HXp-tJ-ixq"; */
-"HXp-tJ-ixq.title" = "Kaart";
+/* Class = "NSTextFieldCell"; title = "Card"; ObjectID = "HXp-tJ-ixq"; */
+"HXp-tJ-ixq.title" = "Carte";
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
 "HyV-fh-RgO.title" = "View";
@@ -140,17 +143,14 @@
 /* Class = "NSMenuItem"; title = "Open…"; ObjectID = "IAo-SY-fd9"; */
 "IAo-SY-fd9.title" = "Open…";
 
-/* Class = "NSWindow"; title = "Window"; ObjectID = "IQv-IB-iLA"; */
-"IQv-IB-iLA.title" = "Window";
+/* Class = "NSWindow"; title = "Document"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Document";
 
 /* Class = "NSMenuItem"; title = "Justify"; ObjectID = "J5U-5w-g23"; */
 "J5U-5w-g23.title" = "Justify";
 
 /* Class = "NSMenuItem"; title = "Use None"; ObjectID = "J7y-lM-qPV"; */
 "J7y-lM-qPV.title" = "Use None";
-
-/* Class = "NSMenuItem"; title = "Revert to Saved"; ObjectID = "KaW-ft-85H"; */
-"KaW-ft-85H.title" = "Revert to Saved";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "Show All";
@@ -182,8 +182,8 @@
 /* Class = "NSMenuItem"; title = "Hide eidReader"; ObjectID = "Olw-nP-bQN"; */
 "Olw-nP-bQN.title" = "Hide eidReader";
 
-/* Class = "NSTextFieldCell"; title = "Afgehaald in"; ObjectID = "Onz-Qt-0sE"; */
-"Onz-Qt-0sE.title" = "Afgehaald in";
+/* Class = "NSTextFieldCell"; title = "Issued in"; ObjectID = "Onz-Qt-0sE"; */
+"Onz-Qt-0sE.title" = "Émis à";
 
 /* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "OwM-mh-QMV"; */
 "OwM-mh-QMV.title" = "Find Previous";
@@ -191,8 +191,8 @@
 /* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "Oyz-dy-DGm"; */
 "Oyz-dy-DGm.title" = "Stop Speaking";
 
-/* Class = "NSTextFieldCell"; title = "tot"; ObjectID = "PgG-UZ-LHC"; */
-"PgG-UZ-LHC.title" = "tot";
+/* Class = "NSTextFieldCell"; title = "until"; ObjectID = "PgG-UZ-LHC"; */
+"PgG-UZ-LHC.title" = "jusqu'au";
 
 /* Class = "NSMenuItem"; title = "Bigger"; ObjectID = "Ptp-SP-VEL"; */
 "Ptp-SP-VEL.title" = "Bigger";
@@ -215,8 +215,8 @@
 /* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "S0p-oC-mLd"; */
 "S0p-oC-mLd.title" = "Jump to Selection";
 
-/* Class = "NSTextFieldCell"; title = "Rijksregisternummer"; ObjectID = "SbF-x3-B11"; */
-"SbF-x3-B11.title" = "Rijksregisternummer";
+/* Class = "NSTextFieldCell"; title = "ID of the National Register"; ObjectID = "SbF-x3-B11"; */
+"SbF-x3-B11.title" = "Numéro national";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
 "Td7-aD-5lo.title" = "Window";
@@ -236,14 +236,8 @@
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "W48-6f-4Dl"; */
 "W48-6f-4Dl.title" = "Edit";
 
-/* Class = "NSTextFieldCell"; title = "Woonplaats"; ObjectID = "WQG-9c-flS"; */
-"WQG-9c-flS.title" = "Woonplaats";
-
 /* Class = "NSMenuItem"; title = "Underline"; ObjectID = "WRG-CD-K1S"; */
 "WRG-CD-K1S.title" = "Underline";
-
-/* Class = "NSMenuItem"; title = "New"; ObjectID = "Was-JA-tGl"; */
-"Was-JA-tGl.title" = "New";
 
 /* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "WeT-3V-zwk"; */
 "WeT-3V-zwk.title" = "Paste and Match Style";
@@ -317,8 +311,14 @@
 /* Class = "NSTextFieldCell"; title = "12 november 1995"; ObjectID = "fw7-37-CZf"; */
 "fw7-37-CZf.title" = "12 november 1995";
 
+/* Class = "NSTextFieldCell"; title = "Villalaan 111"; ObjectID = "gPa-KU-gL3"; */
+"gPa-KU-gL3.title" = "Villalaan 111";
+
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "gVA-U4-sdL"; */
 "gVA-U4-sdL.title" = "Paste";
+
+/* Class = "NSTextFieldCell"; title = "Domicile"; ObjectID = "hHH-1F-KiD"; */
+"hHH-1F-KiD.title" = "Domicile";
 
 /* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "hQb-2v-fYv"; */
 "hQb-2v-fYv.title" = "Smart Quotes";
@@ -350,17 +350,20 @@
 /* Class = "NSTextFieldCell"; title = "123456789101"; ObjectID = "kIb-Xd-3Xu"; */
 "kIb-Xd-3Xu.title" = "123456789101";
 
+/* Class = "NSTextFieldCell"; title = "Man"; ObjectID = "m6M-GY-VbU"; */
+"m6M-GY-VbU.title" = "Man";
+
 /* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "mK6-2p-4JG"; */
 "mK6-2p-4JG.title" = "Check Grammar With Spelling";
 
-/* Class = "NSTextFieldCell"; title = "10 november 2012"; ObjectID = "mdB-j1-6a6"; */
-"mdB-j1-6a6.title" = "10 november 2012";
+/* Class = "NSTextFieldCell"; title = "8 december 2012"; ObjectID = "mdB-j1-6a6"; */
+"mdB-j1-6a6.title" = "8 december 2012";
 
 /* Class = "NSTextFieldCell"; title = "Dalle"; ObjectID = "mml-AI-cef"; */
 "mml-AI-cef.title" = "Dalle";
 
-/* Class = "NSTextFieldCell"; title = "Geldig vanaf"; ObjectID = "n2z-o1-IxF"; */
-"n2z-o1-IxF.title" = "Geldig vanaf";
+/* Class = "NSTextFieldCell"; title = "Valid from"; ObjectID = "n2z-o1-IxF"; */
+"n2z-o1-IxF.title" = "Valide à partir de";
 
 /* Class = "NSMenuItem"; title = "Ligatures"; ObjectID = "o6e-r0-MWq"; */
 "o6e-r0-MWq.title" = "Ligatures";
@@ -405,13 +408,13 @@
 "tlD-Oa-oAM.title" = "Kern";
 
 /* Class = "NSMenu"; title = "eidReader"; ObjectID = "uQy-DD-JDr"; */
-"uQy-DD-JDr.title" = "eidLezer";
+"uQy-DD-JDr.title" = "eidReader";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "uRl-iY-unG"; */
 "uRl-iY-unG.title" = "Cut";
 
-/* Class = "NSTextFieldCell"; title = "10 november 2017"; ObjectID = "v6e-9A-SKh"; */
-"v6e-9A-SKh.title" = "10 november 2017";
+/* Class = "NSTextFieldCell"; title = "8 januari 2017"; ObjectID = "v6e-9A-SKh"; */
+"v6e-9A-SKh.title" = "8 januari 2017";
 
 /* Class = "NSMenuItem"; title = "Paste Style"; ObjectID = "vKC-jM-MkH"; */
 "vKC-jM-MkH.title" = "Paste Style";
@@ -446,8 +449,6 @@
 /* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "z6F-FW-3nz"; */
 "z6F-FW-3nz.title" = "Show Substitutions";
 
-"hHH-1F-KiD.title" = "Woonplaats";
+"female" = "femelle";
 
-"female" = "vrouw";
-
-"male" = "man";
+"male" = "mâle";

@@ -62,7 +62,7 @@ class ViewController: NSViewController {
 			if let basicInfo = basicInfo {
 				nameField.stringValue = "\(basicInfo.firstName) \(basicInfo.otherName) \(basicInfo.lastName)"
 				nationalityField.stringValue = basicInfo.nationality
-				sexField.stringValue = basicInfo.sex == .male ? "man" : "vrouw"
+				sexField.stringValue = basicInfo.sex.description
 				birthPlaceField.stringValue = basicInfo.birthPlace
 				birthdayField.objectValue = basicInfo.birthday
 				nationalIDField.stringValue = basicInfo.nationalIDNumber
