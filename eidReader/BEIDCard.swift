@@ -292,7 +292,7 @@ extension TKSmartCard {
 					String(bytes: data[street], encoding: .utf8)!,
 					String(bytes: data[postalCode], encoding: .utf8)!,
 					String(bytes: data[city], encoding: .utf8)!
-					), title: "Woonplaats", geocodeCompletionHandler: geocodeCompletionHandler), nil)
+					), title: NSLocalizedString("Domicile", comment: "Domicile"), geocodeCompletionHandler: geocodeCompletionHandler), nil)
 			}
 		}
 	}
