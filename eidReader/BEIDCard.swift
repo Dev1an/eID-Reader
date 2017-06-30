@@ -178,6 +178,10 @@ class BasicInfo: NSObject, NSCoding {
 extension TKSmartCard {
 	enum CardError: Error {
 		case NoPreciseDiagnostic, EepromCorrupted, WrongParameterP1P2, CommandNotAvailableWithinCurrentLifeCycle
+		
+		var localizedDescription: String {
+			return "\(self)"
+		}
 	}
 	
 	enum SelectFileError: Error {
