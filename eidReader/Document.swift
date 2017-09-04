@@ -9,6 +9,8 @@
 import Cocoa
 
 class Document: NSDocument {
+	
+	var printInfoIsSetUp = false
 
 	var address: Address? {
 		didSet { updateViewController { $0.address = address } }
@@ -30,6 +32,16 @@ class Document: NSDocument {
 			$0.basicInfo = basicInfo
 			$0.address = address
 			$0.profileImage.image = profileImage
+		}
+	}
+	
+	func setupPrintInfo() {
+		if printInfoIsSetUp == false {
+			printInfo.horizontalPagination = .fitPagination
+			printInfo.verticalPagination = .fitPagination
+			printInfo.isVerticallyCentered = false
+			
+			printInfoIsSetUp = true
 		}
 	}
 	
@@ -59,4 +71,24 @@ class Document: NSDocument {
     override class func autosavesInPlace() -> Bool {
         return true
     }
+	
+	@IBAction func printDocument2(_ sender: Any?) {
+		setupPrintInfo()
+		
+		guard let view = mainWindow?.contentView else {
+			let alert = NSAlert(error: PrintError.noContentView)
+			alert.informativeText = alert.messageText
+			alert.messageText = "Unable to print this card."
+			alert.runModal()
+			return
+		}
+		
+		Swift.print(printInfo.orientation)
+		
+		NSPrintOperation(view: view, printInfo: printInfo).run()
+	}
+}
+
+enum PrintError: Error {
+	case noContentView
 }

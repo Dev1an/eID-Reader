@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <plugIn identifier="com.apple.MapKitIBPlugin" version="12121"/>
@@ -105,7 +105,7 @@
                                         </menuItem>
                                         <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
                                             <connections>
-                                                <action selector="print:" target="Ady-hI-5gd" id="qaZ-4w-aoO"/>
+                                                <action selector="printDocument2:" target="Ady-hI-5gd" id="Pxn-JH-K6l"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -673,13 +673,13 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="262"/>
+            <point key="canvasLocation" x="75" y="303"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="eidReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="CardView" customModule="eidReader" customModuleProvider="target">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="559" height="479"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -696,7 +696,7 @@
                                 </shadow>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="dA3-61-187"/>
                             </imageView>
-                            <mapView mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="acT-Ao-SIC" customClass="PrintableMapView" customModule="eidReader" customModuleProvider="target">
+                            <mapView mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acT-Ao-SIC" customClass="PrintableMapView" customModule="eidReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="559" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="PNQ-am-3WJ"/>
@@ -809,7 +809,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhZ-1V-wOs">
-                                <rect key="frame" x="390" y="300" width="90" height="17"/>
+                                <rect key="frame" x="390" y="300" width="89" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="8 januari 2017" id="v6e-9A-SKh">
                                     <dateFormatter key="formatter" dateStyle="medium" doesRelativeDateFormatting="YES" id="Iqa-cQ-Fcx"/>
                                     <font key="font" metaFont="system"/>

@@ -97,14 +97,6 @@ class ViewController: NSViewController {
 	}
 }
 
-class CardView: NSView {
-	override var acceptsFirstResponder: Bool { return true }
-	
-	@IBAction override func print(_ sender: Any?) {
-		NSPrintOperation(view: self).run()
-	}
-}
-
 class NoInsetsTextField: NSTextField {
 	override var alignmentRectInsets: EdgeInsets {
 		return EdgeInsets(top: 10, left: 0, bottom: 0, right: 0)

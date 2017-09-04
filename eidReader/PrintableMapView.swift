@@ -16,9 +16,12 @@ class PrintableMapView: MKMapView {
 		} else {
 			if let context = NSGraphicsContext.current() {
 				let options = MKMapSnapshotOptions()
-				options.region = region;
-				options.size.width  = dirtyRect.width  * 1.5
-				options.size.height = dirtyRect.height * 1.5
+				let pitch = 1.5
+				let span = MKCoordinateSpan(latitudeDelta: region.span.latitudeDelta/pitch, longitudeDelta: region.span.longitudeDelta/pitch)
+				options.region = MKCoordinateRegion(center: region.center, span: span)
+				options.size.width  = dirtyRect.width  * 2 * CGFloat(pitch)
+				options.size.height = dirtyRect.height * 2 * CGFloat(pitch)
+				options.showsBuildings = true
 				
 				let mapSnapshotter = MKMapSnapshotter(options: options)
 				
@@ -27,7 +30,7 @@ class PrintableMapView: MKMapView {
 					// do error handling
 					if let snapshot = snapshot {
 						NSGraphicsContext.setCurrent(context)
-						var t = NSAffineTransform()
+						let t = NSAffineTransform()
 						t.translateX(by: 0, yBy: dirtyRect.size.height)
 						t.scaleX(by: 1, yBy: -1)
 						t.concat()
