@@ -9,8 +9,32 @@
 import Cocoa
 import MapKit
 
+let belgium = MKCoordinateRegionMake(CLLocationCoordinate2D.init(latitude: 50.473342, longitude: 4.464229), MKCoordinateSpan.init(latitudeDelta: 2.5, longitudeDelta: 4))
+
 func createCardWindow() -> NSWindowController {
 	return storyboard.instantiateController(withIdentifier: "Card window controller") as! NSWindowController
+}
+
+class CardWindow: NSWindow {
+	@IBAction func printDocument2(_ sender: Any?) {
+		let printInfo: NSPrintInfo
+		if let document = windowController?.document as? Document {
+			printInfo = document.printInfo
+		} else {
+			printInfo = NSPrintInfo()
+			fitToTop(info: printInfo)
+		}
+		
+		guard let view = contentView else {
+			let alert = NSAlert(error: PrintError.noContentView)
+			alert.informativeText = alert.messageText
+			alert.messageText = "Unable to print this card."
+			alert.runModal()
+			return
+		}
+		
+		NSPrintOperation(view: view, printInfo: printInfo).run()
+	}
 }
 
 class ViewController: NSViewController {
@@ -49,10 +73,12 @@ class ViewController: NSViewController {
 			if let address = address {
 				addressField.stringValue = "\(address.street), \(address.city) \(address.postalCode)"
 				map.addAnnotation(address)
-				map.setCenter(address.coordinate, animated: true)
+				let region = MKCoordinateRegionMakeWithDistance(address.coordinate, 1500, 1500)
+				map.setRegion(region, animated: true)
 				map.selectAnnotation(address, animated: true)
 			} else {
 				addressField.stringValue = ""
+				map.setRegion(belgium, animated: true)
 			}
 		}
 	}
@@ -94,7 +120,7 @@ class ViewController: NSViewController {
 				self.releasePlaceField.stringValue = ""
 			}
 		}
-	}
+	}	
 }
 
 class NoInsetsTextField: NSTextField {
