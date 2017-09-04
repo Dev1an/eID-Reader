@@ -10,7 +10,7 @@
 </tr>
 </thead>
 <tr>
-<td>A macOS application to read information from Belgian electronic ID cards without the need to install additional drivers or java software.
+<td>A macOS application to read information from Belgian electronic ID cards without the need to install additional drivers, middleware or java software.
 
 The following information is available:
 - Profile picture
@@ -26,7 +26,7 @@ The following information is available:
 All information can be saved and/or printed.
 
 The application runs in an App Sandbox (Apples security mechanism) without internet connection, and is completely open source. So you can be sure that it does not leak confidential information.
-</td><td>Met deze kaartlezer kan je eenvoudig de informatie van een Belgische identiteitskaart uitlezen. Er is geen driver of java vereist.
+</td><td>Met deze kaartlezer kan je eenvoudig de informatie van een Belgische identiteitskaart uitlezen. Er is geen driver, middleware of java vereist.
 
 Volgende informatie is beschikbaar:
 - Profielfoto
