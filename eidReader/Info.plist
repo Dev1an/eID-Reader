@@ -11,6 +11,8 @@
 			<array>
 				<string>eidCard</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>DocIcon</string>
 			<key>CFBundleTypeName</key>
 			<string>Identity Card</string>
 			<key>CFBundleTypeOSTypes</key>
