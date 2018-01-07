@@ -10,13 +10,13 @@ import Cocoa
 import CryptoTokenKit
 import MapKit
 
-let storyboard = NSStoryboard(name: "Main", bundle: nil)
-let appDelegate = NSApplication.shared().delegate as! AppDelegate
+let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+let appDelegate = NSApplication.shared.delegate as! AppDelegate
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-	let slotManager = TKSmartCardSlotManager.default
-	var currentSlot: TKSmartCardSlot?
+	@objc let slotManager = TKSmartCardSlotManager.default
+	@objc var currentSlot: TKSmartCardSlot?
 	var currentAddress: Address?
 	var basicInfo: BasicInfo?
 	var profileImage: NSImage?
@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let url = URL(fileURLWithPath: filename)
 		Swift.print("is file:", url.isFileURL, url)
 		
-		NSDocumentController.shared().openDocument(withContentsOf: url, display: true) {
+		NSDocumentController.shared.openDocument(withContentsOf: url, display: true) {
 			if let error = $2 {
 				let alert = NSAlert(error: error)
 				alert.informativeText = alert.messageText
@@ -50,20 +50,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			}
 		}
 		
-		Swift.print(try? NSDocumentController.shared().typeForContents(of: url))
-		Swift.print(try? NSDocumentController.shared().defaultType)
+//		Swift.print(try? NSDocumentController.shared.typeForContents(of: url))
+//		Swift.print(try? NSDocumentController.shared.defaultType)
 		
 		return true
 	}
 	
-	func discardDocumentUnless(document: Document, didSave: Bool, with context: Any?) {
+	@objc func discardDocumentUnless(document: Document, didSave: Bool, with context: Any?) {
 		if !didSave {
 			document.close()
 		}
 	}
 	
 	@IBAction open func duplicateDocument(_ sender: Any?) {
-		createDocumentFromCurrentCard()
+		_ = createDocumentFromCurrentCard()
 	}
 	
 	func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {
@@ -83,7 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		document.address = currentAddress
 		document.basicInfo = basicInfo
 		document.profileImage = profileImage
-		NSDocumentController.shared().addDocument(document)
+		NSDocumentController.shared.addDocument(document)
 		document.makeWindowControllers()
 		if let oldWindow = readerWindow, let newWindow = document.mainWindow {
 			newWindow.setFrame(oldWindow.frame, display: true)

@@ -14,7 +14,7 @@ class PrintableMapView: MKMapView {
 		if NSGraphicsContext.currentContextDrawingToScreen() {
 			super.draw(dirtyRect)
 		} else {
-			if let context = NSGraphicsContext.current() {
+			if let context = NSGraphicsContext.current {
 				let options = MKMapSnapshotOptions()
 				let pitch: CGFloat = 3.0
 				options.region = region
@@ -27,7 +27,7 @@ class PrintableMapView: MKMapView {
 				mapSnapshotter.start(with: DispatchQueue.global(qos: .userInitiated)) { (snapshot, error) -> Void in
 					// do error handling
 					if let snapshot = snapshot {
-						NSGraphicsContext.setCurrent(context)
+						NSGraphicsContext.current = context
 						let t = NSAffineTransform()
 						t.translateX(by: 0, yBy: dirtyRect.size.height)
 						t.scaleX(by: 1, yBy: -1)

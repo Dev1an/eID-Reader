@@ -12,7 +12,7 @@ import MapKit
 let belgium = MKCoordinateRegionMake(CLLocationCoordinate2D.init(latitude: 50.473342, longitude: 4.464229), MKCoordinateSpan.init(latitudeDelta: 2.5, longitudeDelta: 4))
 
 func createCardWindow() -> NSWindowController {
-	return storyboard.instantiateController(withIdentifier: "Card window controller") as! NSWindowController
+	return storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Card window controller")) as! NSWindowController
 }
 
 class CardWindow: NSWindow {
@@ -124,7 +124,7 @@ class ViewController: NSViewController {
 }
 
 class NoInsetsTextField: NSTextField {
-	override var alignmentRectInsets: EdgeInsets {
-		return EdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+	override var alignmentRectInsets: NSEdgeInsets {
+		return NSEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
 	}
 }

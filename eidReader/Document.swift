@@ -65,7 +65,7 @@ class Document: NSDocument {
 		profileImage = unarchiver.decodeObject(forKey: "profile image") as? NSImage
     }
 
-    override class func autosavesInPlace() -> Bool {
+    override class var autosavesInPlace: Bool {
         return true
     }
 }
