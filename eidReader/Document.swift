@@ -47,12 +47,14 @@ class Document: NSDocument {
 	}
 
     override func data(ofType typeName: String) throws -> Data {
+		Swift.print(typeName)
 		let data = NSMutableData()
 		let archiver = NSKeyedArchiver(forWritingWith: data)
 		archiver.encode(address, forKey: "address")
 		archiver.encode(basicInfo, forKey: "basic information")
 		archiver.encode(profileImage, forKey: "profile image")
 		archiver.finishEncoding()
+		
 		return data as Data
     }
     

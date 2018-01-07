@@ -37,6 +37,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		createDocumentFromCurrentCard().runModalSavePanel(for: .saveOperation, delegate: self, didSave: #selector(discardDocumentUnless), contextInfo: nil)
 	}
 	
+	func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+		let url = URL(fileURLWithPath: filename)
+		Swift.print("is file:", url.isFileURL, url)
+		
+		NSDocumentController.shared().openDocument(withContentsOf: url, display: true) {
+			if let error = $2 {
+				let alert = NSAlert(error: error)
+				alert.informativeText = alert.messageText
+				alert.messageText = "An error occured while reading the card."
+				alert.runModal()
+			}
+		}
+		
+		Swift.print(try? NSDocumentController.shared().typeForContents(of: url))
+		Swift.print(try? NSDocumentController.shared().defaultType)
+		
+		return true
+	}
+	
 	func discardDocumentUnless(document: Document, didSave: Bool, with context: Any?) {
 		if !didSave {
 			document.close()

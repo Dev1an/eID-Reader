@@ -17,6 +17,9 @@
 		746300B51E13F08100ECD5A1 /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */; };
 		746300B81E14259E00ECD5A1 /* BEIDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300B71E14259E00ECD5A1 /* BEIDCard.swift */; };
 		7465F87D1EFB0ADF00A84B59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7465F87F1EFB0ADF00A84B59 /* Localizable.strings */; };
+		7481B0CB1F5FC66800EE9A3B /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7481B0CA1F5FC66800EE9A3B /* GenerateThumbnailForURL.m */; };
+		7481B0CD1F5FC66800EE9A3B /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7481B0CC1F5FC66800EE9A3B /* GeneratePreviewForURL.m */; };
+		7481B0CF1F5FC66800EE9A3B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7481B0CE1F5FC66800EE9A3B /* main.c */; };
 		74FCE6D31E15972A00CDF841 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74FCE6D21E15972A00CDF841 /* MapKit.framework */; };
 		74FCE7111E16B76500CDF841 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCE7101E16B76500CDF841 /* Document.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,11 @@
 		7465F87E1EFB0ADF00A84B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7465F8811EFB0AED00A84B59 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7465F8821EFB0AED00A84B59 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7481B0C81F5FC66800EE9A3B /* QuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		7481B0CA1F5FC66800EE9A3B /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
+		7481B0CC1F5FC66800EE9A3B /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
+		7481B0CE1F5FC66800EE9A3B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		7481B0D01F5FC66800EE9A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74EB7CDC1EFAF46E00C959DC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		74FCE6D11E15966100CDF841 /* eidReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eidReader.entitlements; sourceTree = "<group>"; };
 		74FCE6D21E15972A00CDF841 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -88,6 +96,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7481B0C41F5FC66800EE9A3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				746300861E13EFC200ECD5A1 /* eidReader */,
+				7481B0C91F5FC66800EE9A3B /* QuickLook */,
 				746300981E13EFC200ECD5A1 /* eidReaderTests */,
 				746300A31E13EFC200ECD5A1 /* eidReaderUITests */,
 				746300851E13EFC200ECD5A1 /* Products */,
@@ -108,6 +124,7 @@
 				746300841E13EFC200ECD5A1 /* eidReader.app */,
 				746300951E13EFC200ECD5A1 /* eidReaderTests.xctest */,
 				746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */,
+				7481B0C81F5FC66800EE9A3B /* QuickLook.qlgenerator */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +173,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7481B0C91F5FC66800EE9A3B /* QuickLook */ = {
+			isa = PBXGroup;
+			children = (
+				7481B0CA1F5FC66800EE9A3B /* GenerateThumbnailForURL.m */,
+				7481B0CC1F5FC66800EE9A3B /* GeneratePreviewForURL.m */,
+				7481B0CE1F5FC66800EE9A3B /* main.c */,
+				7481B0D01F5FC66800EE9A3B /* Info.plist */,
+			);
+			path = QuickLook;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7481B0C51F5FC66800EE9A3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		746300831E13EFC200ECD5A1 /* eidReader */ = {
@@ -212,6 +250,24 @@
 			productReference = 746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		7481B0C71F5FC66800EE9A3B /* QuickLook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7481B0D31F5FC66800EE9A3B /* Build configuration list for PBXNativeTarget "QuickLook" */;
+			buildPhases = (
+				7481B0C31F5FC66800EE9A3B /* Sources */,
+				7481B0C41F5FC66800EE9A3B /* Frameworks */,
+				7481B0C51F5FC66800EE9A3B /* Headers */,
+				7481B0C61F5FC66800EE9A3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickLook;
+			productName = QuickLook;
+			productReference = 7481B0C81F5FC66800EE9A3B /* QuickLook.qlgenerator */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,6 +303,12 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 746300831E13EFC200ECD5A1;
 					};
+					7481B0C71F5FC66800EE9A3B = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7TD9A665TC;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 7463007F1E13EFC200ECD5A1 /* Build configuration list for PBXProject "eidReader" */;
@@ -267,6 +329,7 @@
 				746300831E13EFC200ECD5A1 /* eidReader */,
 				746300941E13EFC200ECD5A1 /* eidReaderTests */,
 				7463009F1E13EFC200ECD5A1 /* eidReaderUITests */,
+				7481B0C71F5FC66800EE9A3B /* QuickLook */,
 			);
 		};
 /* End PBXProject section */
@@ -290,6 +353,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7463009E1E13EFC200ECD5A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481B0C61F5FC66800EE9A3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,6 +394,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				746300A51E13EFC200ECD5A1 /* cardreaderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481B0C31F5FC66800EE9A3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7481B0CB1F5FC66800EE9A3B /* GenerateThumbnailForURL.m in Sources */,
+				7481B0CD1F5FC66800EE9A3B /* GeneratePreviewForURL.m in Sources */,
+				7481B0CF1F5FC66800EE9A3B /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +632,45 @@
 			};
 			name = Release;
 		};
+		7481B0D11F5FC66800EE9A3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7TD9A665TC;
+				INFOPLIST_FILE = QuickLook/Info.plist;
+				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader.QuickLook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickLook/QuickLook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Debug;
+		};
+		7481B0D21F5FC66800EE9A3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7TD9A665TC;
+				INFOPLIST_FILE = QuickLook/Info.plist;
+				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader.QuickLook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuickLook/QuickLook-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,6 +706,15 @@
 			buildConfigurations = (
 				746300B01E13EFC200ECD5A1 /* Debug */,
 				746300B11E13EFC200ECD5A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7481B0D31F5FC66800EE9A3B /* Build configuration list for PBXNativeTarget "QuickLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7481B0D11F5FC66800EE9A3B /* Debug */,
+				7481B0D21F5FC66800EE9A3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

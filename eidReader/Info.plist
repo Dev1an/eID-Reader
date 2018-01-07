@@ -8,19 +8,19 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>eidCard</string>
-			</array>
+			<array/>
 			<key>CFBundleTypeIconFile</key>
-			<string>DocIcon</string>
+			<string></string>
 			<key>CFBundleTypeName</key>
-			<string>Identity Card</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>????</string>
-			</array>
+			<string>Belgian electronic ID card</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.devian.beid</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<integer>0</integer>
 			<key>NSDocumentClass</key>
 			<string>eidReader.Document</string>
 		</dict>
@@ -51,5 +51,28 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Belgian electronic ID card</string>
+			<key>UTTypeIconFile</key>
+			<string>DocIcon</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.devian.beid</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>eidCard</string>
+					<string>beid</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
