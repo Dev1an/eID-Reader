@@ -15,7 +15,7 @@ void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbn
 
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize)
 {
-	NSString *_content = @"Hello eidReader thumb user!";
+	NSString *_content = @"Quicklook thumbnail coming soon";
 	
 	QLThumbnailRequestSetThumbnailWithDataRepresentation(thumbnail, (__bridge CFDataRef)[_content dataUsingEncoding:NSUTF8StringEncoding], kUTTypePlainText, NULL, NULL);
 
