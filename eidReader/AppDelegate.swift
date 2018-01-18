@@ -113,8 +113,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
-	func updateImageProgress(progress: Double) {
-		DispatchQueue.main.async { self.viewController?.imageProgressIndicator.doubleValue = progress }
+	func updateImageProgress(progress: UInt8) {
+		DispatchQueue.main.async { self.viewController?.imageProgressIndicator.doubleValue = Double(progress) }
 	}
 	
 	func clearCard() {
@@ -164,12 +164,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 							}
 						} else {
 							card.getBasicInfo { (basicInfo, error) in
-								card.getProfileImage(updateProgress: self.updateImageProgress) { (imageData, error) in
-									if let imageData = imageData, let image = NSImage(data: imageData) {
-										DispatchQueue.main.async {
-											self.profileImage = image
-											self.viewController?.profileImage.image = image
+								card.getProfileImage(updateProgress: self.updateImageProgress) { response in
+									switch response {
+									case .data(let imageData):
+										if let image = NSImage(data: imageData) {
+											DispatchQueue.main.async {
+												self.profileImage = image
+												self.viewController?.profileImage.image = image
+											}
 										}
+									case .error(_):
+										break // TODO: add error handling
 									}
 									card.endSession()
 								}

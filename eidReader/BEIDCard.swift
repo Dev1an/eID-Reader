@@ -8,13 +8,12 @@
 
 import Foundation
 import CryptoTokenKit
-import AppKit
 import MapKit
 
-let idFile:        [UInt8] = [0x3F, 0x00, 0xDF, 0x01, 0x40, 0x38]
-let photoFile:     [UInt8] = [0x3F, 0x00, 0xDF, 0x01, 0x40, 0x35]
-let addressFile:   [UInt8] = [0x3F, 0x00, 0xDF, 0x01, 0x40, 0x33]
-let basicInfoFile: [UInt8] = [0x3F, 0x00, 0xDF, 0x01, 0x40, 0x31]
+let idFile:        [UInt8] = [0xDF, 0x01, 0x40, 0x38]
+let photoFile:     [UInt8] = [0xDF, 0x01, 0x40, 0x35]
+let addressFile:   [UInt8] = [0xDF, 0x01, 0x40, 0x33]
+let basicInfoFile: [UInt8] = [0xDF, 0x01, 0x40, 0x31]
 let selectFile:    [UInt8] = [0,    0xA4, 0x08, 0x0C]
 let readBinary:    [UInt8] = [0,    0xB0]
 
@@ -48,7 +47,7 @@ class Address: NSObject, MKAnnotation, NSCoding {
 		postalCode = aDecoder.decodeObject(forKey: ArchiveKey.postalColde.rawValue) as! String
 		city = aDecoder.decodeObject(forKey: ArchiveKey.city.rawValue) as! String
 		title = aDecoder.decodeObject(forKey: ArchiveKey.title.rawValue) as? String
-
+		
 		let latitude = aDecoder.decodeDouble(forKey: ArchiveKey.latitude.rawValue)
 		let longitude = aDecoder.decodeDouble(forKey: ArchiveKey.longitude.rawValue)
 		coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -126,17 +125,17 @@ class BasicInfo: NSObject, NSCoding {
 			return aDecoder.decodeObject(forKey: key.rawValue) as! String
 		}
 		
-		  cardNumber = string(with: .cardNumber)
+		cardNumber = string(with: .cardNumber)
 		releasePlace = string(with: .releasePlace)
-		   firstName = string(with: .firstName)
-		    lastName = string(with: .lastName)
-		   otherName = string(with: .otherName)
-		 nationality = string(with: .nationality)
-		  birthPlace = string(with: .birthPlace)
+		firstName = string(with: .firstName)
+		lastName = string(with: .lastName)
+		otherName = string(with: .otherName)
+		nationality = string(with: .nationality)
+		birthPlace = string(with: .birthPlace)
 		
 		validityStart = aDecoder.decodeObject(forKey: ArchiveKey.validityStart.rawValue) as! Date
-		  validityEnd = aDecoder.decodeObject(forKey: ArchiveKey.validityEnd.rawValue) as! Date
-		     birthday = aDecoder.decodeObject(forKey: ArchiveKey.birthday.rawValue) as! Date
+		validityEnd = aDecoder.decodeObject(forKey: ArchiveKey.validityEnd.rawValue) as! Date
+		birthday = aDecoder.decodeObject(forKey: ArchiveKey.birthday.rawValue) as! Date
 		
 		birthNumber = aDecoder.decodeObject(forKey: ArchiveKey.birthNumber.rawValue) as! UInt16
 	}
@@ -192,102 +191,155 @@ extension TKSmartCard {
 		case SecurityStatusNotSatisfied, IncorrectLength(expected: UInt8)
 	}
 	
-	func read(file: [UInt8], length: UInt8, offset: UInt16 = 0, reply: @escaping (Data?, Error?)->Void) {
+	enum ReadResponse {
+		case data(Data)
+		case error(Error)
+	}
+	
+	struct UnknownError: Error {}
+	
+	/// Select a file on the card by path as described in ISO 7816-4
+	///
+	/// - Parameter dedicatedFile: Absolute path to dedicated file without the MF Identifier
+	func select(dedicatedFile file: [UInt8], handler reply: @escaping (Error?)->Void) {
 		self.transmit(Data(bytes: selectFile + [UInt8(file.count)] + file)) { (selectFileReply, error) in
 			if let error = error {
-				reply(nil, error)
+				reply(error)
 			} else if let selectFileReply = selectFileReply {
 				switch (selectFileReply[0], selectFileReply[1]) {
 				case (0x62, 0x83):
-					reply(nil, SelectFileError.SelectedFileNotActivated)
+					reply(SelectFileError.SelectedFileNotActivated)
 				case (0x64, 0):
-					reply(nil, CardError.NoPreciseDiagnostic)
+					reply(CardError.NoPreciseDiagnostic)
 				case (0x65, 0x81):
-					reply(nil, CardError.EepromCorrupted)
+					reply(CardError.EepromCorrupted)
 				case (0x6A, 0x82):
-					reply(nil, SelectFileError.FileNotFound)
+					reply(SelectFileError.FileNotFound)
 				case (0x6A, 0x86):
-					reply(nil, CardError.WrongParameterP1P2)
+					reply(CardError.WrongParameterP1P2)
 				case (0x6A, 0x87):
-					reply(nil, SelectFileError.LcInconsistentWithP1P2)
+					reply(SelectFileError.LcInconsistentWithP1P2)
 				case (0x69, 0x99), (0x69, 0x85):
-					reply(nil, SelectFileError.AttemptToSelectForbiddenLogicalChannel)
+					reply(SelectFileError.AttemptToSelectForbiddenLogicalChannel)
 				case (0x6D, 0):
-					reply(nil, CardError.CommandNotAvailableWithinCurrentLifeCycle)
+					reply(CardError.CommandNotAvailableWithinCurrentLifeCycle)
 				case (0x6E, 0):
-					reply(nil, SelectFileError.ClaNotSupported)
+					reply(SelectFileError.ClaNotSupported)
 				case (0x90, 0):
-					self.transmit(Data(bytes: readBinary + [UInt8(offset >> 8), UInt8(offset & 0xff), length])) { (binaryReply, error) in
-						if let error = error {
-							print(error)
-						} else if let binaryReply = binaryReply {
-							let statusBytes = (binaryReply[binaryReply.endIndex-2], binaryReply.last!)
-							switch statusBytes {
-							case (0x64, 0):
-								reply(nil, CardError.NoPreciseDiagnostic)
-							case (0x65, 0x81):
-								reply(nil, CardError.EepromCorrupted)
-							case (0x6B, 0):
-								reply(nil, CardError.WrongParameterP1P2)
-							case (0x6D, 0):
-								reply(nil, CardError.CommandNotAvailableWithinCurrentLifeCycle)
-							case (0x69, 0x82):
-								reply(nil, ReadBinaryError.SecurityStatusNotSatisfied)
-							case (0x6C, _):
-								reply(nil, ReadBinaryError.IncorrectLength(expected: binaryReply.last!))
-							case (0x90, 0):
-								reply(Data(binaryReply.dropLast(2)), nil)
-							default: break
-							}
-						}
-					}
-				default: break
+					reply(nil)
+				default:
+					reply(UnknownError())
 				}
 			} else {
-				// TODO: cleanup
+				fatalError("transmit must either have a response or an error")
 			}
 		}
 	}
 	
-	func readUntilError(file: [UInt8], data: Data = Data(bytes:[]), counter: UInt8 = 0, updateProgress: ((Double)->Void)? = nil, reply: @escaping (Data?, Error?)->Void) {
-		let offset = UInt16(counter) << 8
-		updateProgress?(Double(counter))
-		read(file: file, length: 0, offset: offset) { (newData, error) in
+	
+	/// Read bytes from current file
+	/// as described in section "7.2.3 READ BINARY command" of ISO 7816-4
+	///
+	/// - Parameters:
+	///   - length: number of bytes to read (Le)
+	///   - offset: number of bytes to skip (15-bit unsigned integer, ranging from 0 to 32 767)
+	///   - handler: function to execute after completion
+	func readBytes(length: UInt8, offset: UInt16 = 0, handler: @escaping (ReadResponse) -> Void) {
+		self.transmit(Data(bytes: readBinary + [UInt8(offset >> 8), UInt8(offset & 0xff), length])) { (binaryReply, error) in
 			if let error = error {
+				print(error)
+			} else if let binaryReply = binaryReply {
+				let statusBytes = (binaryReply[binaryReply.endIndex-2], binaryReply.last!)
+				switch statusBytes {
+				case (0x64, 0):
+					handler(.error(CardError.NoPreciseDiagnostic) )
+				case (0x65, 0x81):
+					handler(.error(CardError.EepromCorrupted) )
+				case (0x6B, 0):
+					handler(.error(CardError.WrongParameterP1P2) )
+				case (0x6D, 0):
+					handler(.error(CardError.CommandNotAvailableWithinCurrentLifeCycle) )
+				case (0x69, 0x82):
+					handler(.error(ReadBinaryError.SecurityStatusNotSatisfied) )
+				case (0x6C, _):
+					handler(.error(ReadBinaryError.IncorrectLength(expected: binaryReply.last!)) )
+				case (0x90, 0):
+					handler(.data(
+						Data(binaryReply.dropLast(2))
+						))
+				default:
+					handler(
+						.error( UnknownError() )
+					)
+				}
+			}
+		}
+	}
+	
+	func readBytesUntilError(data: Data = Data(bytes:[]), updateProgress: ((UInt8)->Void)? = nil, handler reply: @escaping (ReadResponse)->Void) {
+		let offset = UInt16(data.count)
+		updateProgress?(UInt8(offset/256))
+		readBytes(length: 0, offset: offset) {
+			switch $0 {
+			case .error(let error):
 				switch error {
 				case ReadBinaryError.IncorrectLength(let expectedLength):
-					self.read(file: file, length: expectedLength, offset: offset) { (newData, error) in
-						updateProgress?(Double(counter+1))
-						if let error = error {
-							reply(data, error)
-						} else if let newData = newData {
+					self.readBytes(length: expectedLength, offset: offset) { response in
+						updateProgress?(UInt8(offset/256))
+						switch response {
+						case .error(let error):
+							reply(.error(error))
+						case .data(let newData):
 							var concat = Data()
 							concat.reserveCapacity(data.count+newData.count)
 							concat.append(data)
 							concat.append(newData)
-							reply(concat, nil)
+							reply(.data(concat))
 						}
 					}
+				case CardError.WrongParameterP1P2:
+					if data.count > 0 {
+						reply(.data(data))
+					} else {
+						reply(.error(error))
+					}
 				default:
-					reply(data, error)
+					reply(.error(error))
 				}
-			} else if let newData = newData {
+			case .data(let newData):
 				var concat = Data()
 				concat.reserveCapacity(data.count+newData.count)
 				concat.append(data)
 				concat.append(newData)
-				self.readUntilError(file: file, data: concat, counter: counter+1, updateProgress: updateProgress) { (data, error) in
-					reply(data, error)
+				if newData.count < 256 {
+					reply(.data(concat))
+				} else {
+					self.readBytesUntilError(data: concat, updateProgress: updateProgress, handler: reply)
 				}
+			}
+		}
+	}
+	
+	/// Select dedicated file and read all its bytes. This is a helper function that combines the SELECT (section 7.1.1) & READ BINARY (section 7.2.3) commands from ISO 7816-4.
+	///
+	/// - Parameters:
+	///   - file: Absolute path to dedicated file without the MF Identifier
+	///   - updateProgress: function that gets called while reading the large files and informs the progress of the read command
+	///   - reply: function that gets called when the file is read
+	func read(file: [UInt8], updateProgress: ((UInt8)->Void)? = nil, reply: @escaping (ReadResponse)->Void) {
+		select(dedicatedFile: file) {
+			if let error = $0 {
+				reply(.error(error) )
+			} else {
+				self.readBytesUntilError(updateProgress: updateProgress, handler: reply)
 			}
 		}
 	}
 	
 	func getAddress(geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler = {(_,_) in}, reply: @escaping (_ address: Address?, _ error: Error?) -> Void) {
-		readUntilError(file: addressFile) { (data, error) in
-			if let error = error {
-				reply(nil, error)
-			} else if let data = data {
+		read(file: addressFile) { response in
+			switch response {
+			case .data(let data):
 				let street = 2 ..< Int(data[1]) + 2
 				let postalCode = street.upperBound + 2  ..<  street.upperBound + Int(data[street.upperBound+1]) + 2
 				let city = postalCode.upperBound + 2  ..<  postalCode.upperBound + Int(data[postalCode.upperBound+1]) + 2
@@ -297,23 +349,26 @@ extension TKSmartCard {
 					String(bytes: data[postalCode], encoding: .utf8)!,
 					String(bytes: data[city], encoding: .utf8)!
 					), title: NSLocalizedString("Domicile", comment: "Domicile"), geocodeCompletionHandler: geocodeCompletionHandler), nil)
+			case .error(let error):
+				reply(nil, error)
 			}
 		}
 	}
 	
 	
 	func getBasicInfo(reply: @escaping (BasicInfo?, Error?)->Void) {
-		readUntilError(file: basicInfoFile) { (data, error) in
-			if let error = error {
+		read(file: basicInfoFile) { response in
+			switch response {
+			case .error(let error):
 				reply(nil, error)
-			} else if let data = data {
+			case .data(let data):
 				reply(BasicInfo(from: data), nil)
 			}
 		}
 	}
 	
-	func getProfileImage(updateProgress: ((Double)->Void)? = nil, reply: @escaping (Data?, Error?)->Void) {
-		readUntilError(file: photoFile, updateProgress: updateProgress, reply: reply)
+	func getProfileImage(updateProgress: ((UInt8)->Void)? = nil, reply: @escaping (ReadResponse)->Void) {
+		read(file: photoFile, updateProgress: updateProgress, reply: reply)
 	}
 }
 
@@ -339,3 +394,4 @@ extension DateFormatter {
 		self.dateStyle = style
 	}
 }
+
