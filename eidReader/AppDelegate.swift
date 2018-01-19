@@ -114,7 +114,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func updateImageProgress(progress: UInt8) {
-		DispatchQueue.main.async { self.viewController?.imageProgressIndicator.doubleValue = Double(progress) }
+		DispatchQueue.main.async {
+			self.viewController?.imageProgressIndicator.doubleValue = Double(progress)
+		}
 	}
 	
 	func clearCard() {
@@ -129,45 +131,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if let card = currentSlot?.makeSmartCard() {
 			card.beginSession{ (success, error) in
 				if success {
-					card.getAddress(geocodeCompletionHandler: self.updateHomeCoordinate) { (address, error) in
-						if let error = error {
-							DispatchQueue.main.async {
-								let alert = NSAlert(error: error)
-								alert.informativeText = alert.messageText
-								alert.messageText = "An error occured while reading the card."
-								alert.runModal()
+					DispatchQueue.global(qos: .userInteractive).async {
+						do {
+							self.currentAddress = try card.getAddress(geocodeCompletionHandler: self.updateHomeCoordinate)
+							self.basicInfo = try card.getBasicInfo()
+							DispatchQueue.main.sync {
+								self.viewController?.basicInfo = self.basicInfo
+								self.viewController?.imageProgressIndicator.isHidden = false
 							}
-						} else {
-							card.getBasicInfo { (basicInfo, error) in
-								card.getProfileImage(updateProgress: self.updateImageProgress) { response in
-									switch response {
-									case .data(let imageData):
-										if let image = NSImage(data: imageData) {
-											DispatchQueue.main.async {
-												self.profileImage = image
-												self.viewController?.profileImage.image = image
-											}
-										}
-									case .error(_):
-										break // TODO: add error handling
-									}
-									card.endSession()
-								}
-								DispatchQueue.main.async { self.viewController?.imageProgressIndicator.isHidden = false }
-								if let basicInfo = basicInfo {
-									DispatchQueue.main.async {
-										self.basicInfo = basicInfo
-										self.viewController?.basicInfo = basicInfo
-									}
-								}
+							self.profileImage = NSImage(data: try card.getProfileImage(updateProgress: self.updateImageProgress))
+							DispatchQueue.main.sync {
+								self.viewController?.profileImage.image = self.profileImage
 							}
-							if let address = address {
-								self.currentAddress = address
-							}
+							card.endSession()
+						} catch {
+							self.display(error: error, message: "An error occured while reading the card.")
 						}
 					}
+				} else {
+					self.display(error: error, message: "Unable to read from card")
 				}
 			}
+		}
+	}
+	
+	func display(error: Error?, message: String) {
+		DispatchQueue.main.sync {
+			let alert = error == nil ? NSAlert() : NSAlert(error: error!)
+			alert.informativeText = alert.messageText
+			alert.messageText = message
+			alert.runModal()
 		}
 	}
 	

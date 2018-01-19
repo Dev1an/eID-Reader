@@ -353,39 +353,47 @@ extension TKSmartCard {
 		}
 	}
 	
-	func getAddress(geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler = {(_,_) in}, reply: @escaping (_ address: Address?, _ error: Error?) -> Void) {
-		read(file: addressFile) { response in
-			switch response {
-			case .data(let data):
-				let street = 2 ..< Int(data[1]) + 2
-				let postalCode = street.upperBound + 2  ..<  street.upperBound + Int(data[street.upperBound+1]) + 2
-				let city = postalCode.upperBound + 2  ..<  postalCode.upperBound + Int(data[postalCode.upperBound+1]) + 2
-				
-				reply(Address( address: (
-					String(bytes: data[street], encoding: .utf8)!,
-					String(bytes: data[postalCode], encoding: .utf8)!,
-					String(bytes: data[city], encoding: .utf8)!
-					), title: NSLocalizedString("Domicile", comment: "Domicile"), geocodeCompletionHandler: geocodeCompletionHandler), nil)
-			case .error(let error):
-				reply(nil, error)
-			}
+	func syncRead(file: [UInt8], updateProgress: ((UInt8)->Void)? = nil) throws -> Data {
+		let semaphore = DispatchSemaphore(value: 0)
+		var response: ReadResponse?
+		self.read(file: file, updateProgress: updateProgress) {
+			response = $0
+			semaphore.signal()
+		}
+		semaphore.wait()
+		
+		switch response! {
+		case .data(let data):
+			return data
+		case .error(let error):
+			throw error
 		}
 	}
 	
-	
-	func getBasicInfo(reply: @escaping (BasicInfo?, Error?)->Void) {
-		read(file: basicInfoFile) { response in
-			switch response {
-			case .error(let error):
-				reply(nil, error)
-			case .data(let data):
-				reply(BasicInfo(from: data), nil)
-			}
-		}
+	func getAddress(geocodeCompletionHandler: @escaping CLGeocodeCompletionHandler = {(_,_) in}) throws -> Address {
+		let data = try syncRead(file: addressFile)
+		let street = 2 ..< Int(data[1]) + 2
+		let postalCode = street.upperBound + 2  ..<  street.upperBound + Int(data[street.upperBound+1]) + 2
+		let city = postalCode.upperBound + 2  ..<  postalCode.upperBound + Int(data[postalCode.upperBound+1]) + 2
+		
+		return Address(
+			address: (
+				String(bytes: data[street], encoding: .utf8)!,
+				String(bytes: data[postalCode], encoding: .utf8)!,
+				String(bytes: data[city], encoding: .utf8)!
+			),
+			title: NSLocalizedString("Domicile", comment: "Domicile"),
+			geocodeCompletionHandler: geocodeCompletionHandler
+		)
 	}
 	
-	func getProfileImage(updateProgress: ((UInt8)->Void)? = nil, reply: @escaping (ReadResponse)->Void) {
-		read(file: photoFile, updateProgress: updateProgress, reply: reply)
+	
+	func getBasicInfo() throws -> BasicInfo {
+		return BasicInfo(from: try syncRead(file: basicInfoFile))
+	}
+	
+	func getProfileImage(updateProgress: ((UInt8)->Void)? = nil) throws -> Data {
+		return try syncRead(file: photoFile, updateProgress: updateProgress)
 	}
 }
 
