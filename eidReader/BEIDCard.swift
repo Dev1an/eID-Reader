@@ -14,8 +14,6 @@ let idFile:        [UInt8] = [0xDF, 0x01, 0x40, 0x38]
 let photoFile:     [UInt8] = [0xDF, 0x01, 0x40, 0x35]
 let addressFile:   [UInt8] = [0xDF, 0x01, 0x40, 0x33]
 let basicInfoFile: [UInt8] = [0xDF, 0x01, 0x40, 0x31]
-let selectFile:    [UInt8] = [0,    0xA4, 0x08, 0x0C]
-let readBinary:    [UInt8] = [0,    0xB0]
 
 let geocoder = CLGeocoder()
 
@@ -202,7 +200,16 @@ extension TKSmartCard {
 	///
 	/// - Parameter dedicatedFile: Absolute path to dedicated file without the MF Identifier
 	func select(dedicatedFile file: [UInt8], handler reply: @escaping (Error?)->Void) {
-		self.transmit(Data(bytes: selectFile + [UInt8(file.count)] + file)) { (selectFileReply, error) in
+		let packet = Data(
+			bytes: [
+				0x00,
+				0xA4,
+				0x08,
+				0x0C,
+				UInt8(file.count)
+				] + file
+		)
+		self.transmit(packet) { (selectFileReply, error) in
 			if let error = error {
 				reply(error)
 			} else if let selectFileReply = selectFileReply {
@@ -244,10 +251,20 @@ extension TKSmartCard {
 	///   - length: number of bytes to read (Le)
 	///   - offset: number of bytes to skip (15-bit unsigned integer, ranging from 0 to 32 767)
 	///   - handler: function to execute after completion
-	func readBytes(length: UInt8, offset: UInt16 = 0, handler: @escaping (ReadResponse) -> Void) {
-		self.transmit(Data(bytes: readBinary + [UInt8(offset >> 8), UInt8(offset & 0xff), length])) { (binaryReply, error) in
+	func readBytes(length: UInt8, offset: UInt16 = 0, handler: @escaping (_ response: ReadResponse) -> Void) {
+		let packet = Data(
+			bytes: [
+				0x00, // Commmand header: CLA (Class byte)
+				0xB0,                  // INS (Instruction byte: READ BINARY)
+				UInt8(offset >> 8),    // P1  (Parameter byte: offset's high byte)
+				UInt8(offset & 0xff),  // P2  (Parameter byte: offset's  low byte)
+				
+				length // Length of the file
+			]
+		)
+		transmit(packet) { (binaryReply, error) in
 			if let error = error {
-				print(error)
+				handler(.error(error))
 			} else if let binaryReply = binaryReply {
 				let statusBytes = (binaryReply[binaryReply.endIndex-2], binaryReply.last!)
 				switch statusBytes {
@@ -276,7 +293,7 @@ extension TKSmartCard {
 		}
 	}
 	
-	func readBytesUntilError(data: Data = Data(bytes:[]), updateProgress: ((UInt8)->Void)? = nil, handler reply: @escaping (ReadResponse)->Void) {
+	func readBytesUntilError(data: Data = Data(bytes:[]), updateProgress: ((_ progress: UInt8)->Void)? = nil, handler reply: @escaping (_ response: ReadResponse)->Void) {
 		let offset = UInt16(data.count)
 		updateProgress?(UInt8(offset/256))
 		readBytes(length: 0, offset: offset) {
@@ -320,13 +337,13 @@ extension TKSmartCard {
 		}
 	}
 	
-	/// Select dedicated file and read all its bytes. This is a helper function that combines the SELECT (section 7.1.1) & READ BINARY (section 7.2.3) commands from ISO 7816-4.
+	/// Select dedicated file and read all its bytes. This is a helper function that combines the SELECT & READ BINARY commands from ISO 7816-4 (sections 7.1.1 & 7.2.3)
 	///
 	/// - Parameters:
 	///   - file: Absolute path to dedicated file without the MF Identifier
 	///   - updateProgress: function that gets called while reading the large files and informs the progress of the read command
 	///   - reply: function that gets called when the file is read
-	func read(file: [UInt8], updateProgress: ((UInt8)->Void)? = nil, reply: @escaping (ReadResponse)->Void) {
+	func read(file: [UInt8], updateProgress: ((UInt8)->Void)? = nil, reply: @escaping (_ response: ReadResponse)->Void) {
 		select(dedicatedFile: file) {
 			if let error = $0 {
 				reply(.error(error) )
@@ -394,4 +411,3 @@ extension DateFormatter {
 		self.dateStyle = style
 	}
 }
-
