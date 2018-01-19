@@ -47,9 +47,9 @@ Deze applicatie maakt gebruik van Apples "App Sandbox" technologie, heeft geen n
 
 ## Technology
 
-<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift" /></a>
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift" /></a>
 
-This application uses Apple's standard `CryptoTokenKit` framework to communicate with the smartcard reader and is written completely in Swift 3.
+This application uses Apple's standard `CryptoTokenKit` framework to communicate with the smartcard reader and is written completely in Swift 4.
 
 ## Installation
 
