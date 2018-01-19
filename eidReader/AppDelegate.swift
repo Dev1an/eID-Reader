@@ -24,19 +24,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	var readerWindow: NSWindow?
 	var viewController: ViewController?
 	
+	var managerObservation: NSKeyValueObservation?
+	var slotObservation: NSKeyValueObservation?
+	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		let windowController = createCardWindow()
 		windowController.showWindow(self)
 		readerWindow = windowController.window
 		viewController = (readerWindow?.contentViewController as! ViewController)
 		
-		addObserver(self, forKeyPath: #keyPath(slotManager.slotNames), options: [.new, .initial], context: nil)
+		managerObservation = slotManager?.observe(\.slotNames, options: .initial, changeHandler: updateCardSlots)
 	}
-	
+
 	@IBAction open func saveDocument(_ sender: Any?) {
 		createDocumentFromCurrentCard().runModalSavePanel(for: .saveOperation, delegate: self, didSave: #selector(discardDocumentUnless), contextInfo: nil)
 	}
-	
+
 	func application(_ sender: NSApplication, openFile filename: String) -> Bool {
 		let url = URL(fileURLWithPath: filename)
 		Swift.print("is file:", url.isFileURL, url)
@@ -50,26 +53,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			}
 		}
 		
-//		Swift.print(try? NSDocumentController.shared.typeForContents(of: url))
-//		Swift.print(try? NSDocumentController.shared.defaultType)
-		
 		return true
 	}
-	
+
 	@objc func discardDocumentUnless(document: Document, didSave: Bool, with context: Any?) {
 		if !didSave {
 			document.close()
 		}
 	}
-	
+
 	@IBAction open func duplicateDocument(_ sender: Any?) {
 		_ = createDocumentFromCurrentCard()
 	}
-	
+
 	func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {
 		return false
 	}
-	
+
 	override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
 		if (menuItem.tag == 2) {
 			return true
@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			return currentSlot?.state == .validCard
 		}
 	}
-	
+
 	func createDocumentFromCurrentCard() -> Document {
 		let document = Document()
 		document.address = currentAddress
@@ -95,7 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 		return document
 	}
-	
+
 	func updateHomeCoordinate(places: [CLPlacemark]?, error: Error?) {
 		if let coordinate = places?.first?.location?.coordinate {
 			currentAddress!.coordinate = coordinate
@@ -106,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBAction func showMainWindow(_ sender: Any?) {
 		showMainWindow()
 	}
-	
+
 	func showMainWindow() {
 		if readerWindow?.isVisible == false {
 			NSWindowController(window: readerWindow).showWindow(self)
@@ -121,31 +121,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		DispatchQueue.main.async {
 			self.viewController?.address = nil
 			self.viewController?.basicInfo = nil
-		}
-	}
-	
-	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-		if keyPath == #keyPath(slotManager.slotNames) {
-			if let firstSlot = (change?[.newKey] as! [String]).first {
-				observe(slot: firstSlot)
-			} else {
-				clearCard()
-				DispatchQueue.main.async {
-					self.readerWindow?.title = "No card reader detected"
-				}
-			}
-		} else if keyPath == #keyPath(currentSlot.state) {
-			if let state = currentSlot?.state {
-				switch state {
-				case .missing :
-					removeObserver(self, forKeyPath: #keyPath(currentSlot.state), context: nil)
-				case .empty:
-					clearCard()
-				case .validCard:
-					readSlot()
-				default: break
-				}
-			}
 		}
 	}
 	
@@ -196,6 +171,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
+	func updateCardSlots(manager: TKSmartCardSlotManager, change: NSKeyValueObservedChange<[String]>) {
+		if let firstSlot = manager.slotNames.first {
+			observe(slot: firstSlot)
+		} else {
+			clearCard()
+			DispatchQueue.main.async {
+				self.readerWindow?.title = "No card reader detected"
+			}
+		}
+	}
+	
 	func observe(slot: String) {
 		DispatchQueue.main.async {
 			self.readerWindow?.title = slot
@@ -203,21 +189,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 		slotManager?.getSlot(withName: slot) {
 			self.currentSlot = $0
-			self.addObserver(self, forKeyPath: #keyPath(currentSlot.state), options: [.new, .initial], context: nil)
+			self.slotObservation = self.currentSlot?.observe(\.state, options: .initial) {_,_ in
+				if let state = self.currentSlot?.state {
+					switch state {
+					case .missing :
+						self.slotObservation = nil
+					case .empty:
+						self.clearCard()
+					case .validCard:
+						self.readSlot()
+					default: break
+					}
+				}
+			}
 		}
-	}
-
-	func applicationWillTerminate(_ aNotification: Notification) {
-		removeObserver(self, forKeyPath: #keyPath(slotManager.slotNames), context: nil)
 	}
 
 	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
 		return true
-	}
-}
-
-extension Data {
-	func hexEncodedString() -> String {
-		return map { String(format: "%02hhx", $0) }.joined()
 	}
 }
