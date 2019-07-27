@@ -65,6 +65,7 @@
 		7481B0CC1F5FC66800EE9A3B /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		7481B0CE1F5FC66800EE9A3B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		7481B0D01F5FC66800EE9A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E2B0AB22ECFE0B003DFDFE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74EB7CDC1EFAF46E00C959DC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		74FCE6D11E15966100CDF841 /* eidReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eidReader.entitlements; sourceTree = "<group>"; };
 		74FCE6D21E15972A00CDF841 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -109,6 +110,7 @@
 		7463007B1E13EFC200ECD5A1 = {
 			isa = PBXGroup;
 			children = (
+				74E2B0AB22ECFE0B003DFDFE /* README.md */,
 				746300861E13EFC200ECD5A1 /* eidReader */,
 				7481B0C91F5FC66800EE9A3B /* QuickLook */,
 				746300981E13EFC200ECD5A1 /* eidReaderTests */,
