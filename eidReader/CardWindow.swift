@@ -9,10 +9,10 @@
 import Cocoa
 import MapKit
 
-let belgium = MKCoordinateRegionMake(CLLocationCoordinate2D.init(latitude: 50.473342, longitude: 4.464229), MKCoordinateSpan.init(latitudeDelta: 2.5, longitudeDelta: 4))
+let belgium = MKCoordinateRegion.init(center: CLLocationCoordinate2D.init(latitude: 50.473342, longitude: 4.464229), span: MKCoordinateSpan.init(latitudeDelta: 2.5, longitudeDelta: 4))
 
 func createCardWindow() -> NSWindowController {
-	return storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Card window controller")) as! NSWindowController
+	return storyboard.instantiateController(withIdentifier: "Card window controller") as! NSWindowController
 }
 
 class CardWindow: NSWindow {
@@ -73,7 +73,7 @@ class ViewController: NSViewController {
 			if let address = address {
 				addressField.stringValue = "\(address.street), \(address.city) \(address.postalCode)"
 				map.addAnnotation(address)
-				let region = MKCoordinateRegionMakeWithDistance(address.coordinate, 1500, 1500)
+				let region = MKCoordinateRegion.init(center: address.coordinate, latitudinalMeters: 1500, longitudinalMeters: 1500)
 				map.setRegion(region, animated: true)
 				map.selectAnnotation(address, animated: true)
 			} else {

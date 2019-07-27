@@ -10,7 +10,7 @@ import Cocoa
 import CryptoTokenKit
 import MapKit
 
-let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+let storyboard = NSStoryboard(name: "Main", bundle: nil)
 let appDelegate = NSApplication.shared.delegate as! AppDelegate
 
 @NSApplicationMain
@@ -70,7 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return false
 	}
 
-	override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+	func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
 		if (menuItem.tag == 2) {
 			return true
 		} else {

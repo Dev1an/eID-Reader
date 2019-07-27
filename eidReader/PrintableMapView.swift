@@ -15,7 +15,7 @@ class PrintableMapView: MKMapView {
 			super.draw(dirtyRect)
 		} else {
 			if let context = NSGraphicsContext.current {
-				let options = MKMapSnapshotOptions()
+				let options = MKMapSnapshotter.Options()
 				let pitch: CGFloat = 3.0
 				options.region = region
 				options.size.width  = dirtyRect.width  * pitch

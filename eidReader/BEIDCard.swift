@@ -201,13 +201,13 @@ extension TKSmartCard {
 	/// - Parameter dedicatedFile: Absolute path to dedicated file without the MF Identifier
 	func select(dedicatedFile file: [UInt8], handler reply: @escaping (Error?)->Void) {
 		let packet = Data(
-			bytes: [
+			[
 				0x00,
 				0xA4,
 				0x08,
 				0x0C,
 				UInt8(file.count)
-				] + file
+			] + file
 		)
 		self.transmit(packet) { (selectFileReply, error) in
 			if let error = error {
@@ -252,16 +252,14 @@ extension TKSmartCard {
 	///   - offset: number of bytes to skip (15-bit unsigned integer, ranging from 0 to 32 767)
 	///   - handler: function to execute after completion
 	func readBytes(length: UInt8, offset: UInt16 = 0, handler: @escaping (_ response: ReadResponse) -> Void) {
-		let packet = Data(
-			bytes: [
-				0x00, // Commmand header: CLA (Class byte)
-				0xB0,                  // INS (Instruction byte: READ BINARY)
-				UInt8(offset >> 8),    // P1  (Parameter byte: offset's high byte)
-				UInt8(offset & 0xff),  // P2  (Parameter byte: offset's  low byte)
-				
-				length // Length of the file
-			]
-		)
+		let packet = Data([
+			0x00, // Commmand header: CLA (Class byte)
+			0xB0,                  // INS (Instruction byte: READ BINARY)
+			UInt8(offset >> 8),    // P1  (Parameter byte: offset's high byte)
+			UInt8(offset & 0xff),  // P2  (Parameter byte: offset's  low byte)
+			
+			length // Length of the file
+		])
 		transmit(packet) { (binaryReply, error) in
 			if let error = error {
 				handler(.error(error))
@@ -293,7 +291,7 @@ extension TKSmartCard {
 		}
 	}
 	
-	func readBytesUntilError(data: Data = Data(bytes:[]), updateProgress: ((_ progress: UInt8)->Void)? = nil, handler reply: @escaping (_ response: ReadResponse)->Void) {
+	func readBytesUntilError(data: Data = Data([]), updateProgress: ((_ progress: UInt8)->Void)? = nil, handler reply: @escaping (_ response: ReadResponse)->Void) {
 		let offset = UInt16(data.count)
 		updateProgress?(UInt8(offset/256))
 		readBytes(length: 0, offset: offset) {

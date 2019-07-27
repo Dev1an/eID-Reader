@@ -9,8 +9,8 @@
 import Cocoa
 
 func fitToTop(info: NSPrintInfo) {
-	info.horizontalPagination = .fitPagination
-	info.verticalPagination = .fitPagination
+	info.horizontalPagination = .fit
+	info.verticalPagination = .fit
 	info.isVerticallyCentered = false
 }
 
