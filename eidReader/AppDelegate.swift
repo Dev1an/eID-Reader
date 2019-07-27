@@ -134,15 +134,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 					DispatchQueue.global(qos: .userInteractive).async {
 						do {
 							self.currentAddress = try card.getAddress(geocodeCompletionHandler: self.updateHomeCoordinate)
+							
 							self.basicInfo = try card.getBasicInfo()
 							DispatchQueue.main.sync {
 								self.viewController?.basicInfo = self.basicInfo
 								self.viewController?.imageProgressIndicator.isHidden = false
 							}
+							
 							self.profileImage = NSImage(data: try card.getProfileImage(updateProgress: self.updateImageProgress))
 							DispatchQueue.main.sync {
 								self.viewController?.profileImage.image = self.profileImage
 							}
+							
 							card.endSession()
 						} catch {
 							self.display(error: error, message: "An error occured while reading the card.")

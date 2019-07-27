@@ -8,6 +8,7 @@
 
 import XCTest
 
+@available(OSX 10.11, *)
 class cardreaderUITests: XCTestCase {
         
     override func setUp() {
