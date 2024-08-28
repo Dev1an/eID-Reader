@@ -3,101 +3,66 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		74354E601ED4A2480048911A /* PrintableMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74354E5F1ED4A2480048911A /* PrintableMapView.swift */; };
-		746300881E13EFC200ECD5A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300871E13EFC200ECD5A1 /* AppDelegate.swift */; };
-		7463008A1E13EFC200ECD5A1 /* CardWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300891E13EFC200ECD5A1 /* CardWindow.swift */; };
-		7463008C1E13EFC200ECD5A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7463008B1E13EFC200ECD5A1 /* Assets.xcassets */; };
-		7463008F1E13EFC200ECD5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7463008D1E13EFC200ECD5A1 /* Main.storyboard */; };
-		7463009A1E13EFC200ECD5A1 /* cardreaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300991E13EFC200ECD5A1 /* cardreaderTests.swift */; };
-		746300A51E13EFC200ECD5A1 /* cardreaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */; };
-		746300B51E13F08100ECD5A1 /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */; };
-		746300B81E14259E00ECD5A1 /* BEIDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746300B71E14259E00ECD5A1 /* BEIDCard.swift */; };
-		7465F87D1EFB0ADF00A84B59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7465F87F1EFB0ADF00A84B59 /* Localizable.strings */; };
-		7481B0CB1F5FC66800EE9A3B /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7481B0CA1F5FC66800EE9A3B /* GenerateThumbnailForURL.m */; };
-		7481B0CD1F5FC66800EE9A3B /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7481B0CC1F5FC66800EE9A3B /* GeneratePreviewForURL.m */; };
-		7481B0CF1F5FC66800EE9A3B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7481B0CE1F5FC66800EE9A3B /* main.c */; };
-		74FCE6D31E15972A00CDF841 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74FCE6D21E15972A00CDF841 /* MapKit.framework */; };
-		74FCE7111E16B76500CDF841 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCE7101E16B76500CDF841 /* Document.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
-		746300961E13EFC200ECD5A1 /* PBXContainerItemProxy */ = {
+		74BC37372C7F499100E6FC49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7463007C1E13EFC200ECD5A1 /* Project object */;
+			containerPortal = 74BC371D2C7F499000E6FC49 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 746300831E13EFC200ECD5A1;
-			remoteInfo = cardreader;
+			remoteGlobalIDString = 74BC37242C7F499000E6FC49;
+			remoteInfo = eidReader;
 		};
-		746300A11E13EFC200ECD5A1 /* PBXContainerItemProxy */ = {
+		74BC37412C7F499100E6FC49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7463007C1E13EFC200ECD5A1 /* Project object */;
+			containerPortal = 74BC371D2C7F499000E6FC49 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 746300831E13EFC200ECD5A1;
-			remoteInfo = cardreader;
+			remoteGlobalIDString = 74BC37242C7F499000E6FC49;
+			remoteInfo = eidReader;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		74354E5F1ED4A2480048911A /* PrintableMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintableMapView.swift; sourceTree = "<group>"; };
-		746300841E13EFC200ECD5A1 /* eidReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eidReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		746300871E13EFC200ECD5A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		746300891E13EFC200ECD5A1 /* CardWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWindow.swift; sourceTree = "<group>"; };
-		7463008B1E13EFC200ECD5A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7463008E1E13EFC200ECD5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		746300901E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		746300951E13EFC200ECD5A1 /* eidReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eidReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		746300991E13EFC200ECD5A1 /* cardreaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardreaderTests.swift; sourceTree = "<group>"; };
-		7463009B1E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eidReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardreaderUITests.swift; sourceTree = "<group>"; };
-		746300A61E13EFC200ECD5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
-		746300B71E14259E00ECD5A1 /* BEIDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEIDCard.swift; sourceTree = "<group>"; };
-		7465F87E1EFB0ADF00A84B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7465F8811EFB0AED00A84B59 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7465F8821EFB0AED00A84B59 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7481B0C81F5FC66800EE9A3B /* QuickLook.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickLook.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
-		7481B0CA1F5FC66800EE9A3B /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
-		7481B0CC1F5FC66800EE9A3B /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
-		7481B0CE1F5FC66800EE9A3B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		7481B0D01F5FC66800EE9A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74E2B0AB22ECFE0B003DFDFE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		74EB7CDC1EFAF46E00C959DC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		74FCE6D11E15966100CDF841 /* eidReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = eidReader.entitlements; sourceTree = "<group>"; };
-		74FCE6D21E15972A00CDF841 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		74FCE6D61E15BAE400CDF841 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
-		74FCE7101E16B76500CDF841 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		74BC37252C7F499000E6FC49 /* eidReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eidReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BC37362C7F499100E6FC49 /* eidReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eidReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BC37402C7F499100E6FC49 /* eidReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eidReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		74BC37272C7F499000E6FC49 /* eidReader */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = eidReader;
+			sourceTree = "<group>";
+		};
+		74BC37392C7F499100E6FC49 /* eidReaderTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = eidReaderTests;
+			sourceTree = "<group>";
+		};
+		74BC37432C7F499100E6FC49 /* eidReaderUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = eidReaderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		746300811E13EFC200ECD5A1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				74FCE6D31E15972A00CDF841 /* MapKit.framework in Frameworks */,
-				746300B51E13F08100ECD5A1 /* CryptoTokenKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		746300921E13EFC200ECD5A1 /* Frameworks */ = {
+		74BC37222C7F499000E6FC49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7463009D1E13EFC200ECD5A1 /* Frameworks */ = {
+		74BC37332C7F499100E6FC49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7481B0C41F5FC66800EE9A3B /* Frameworks */ = {
+		74BC373D2C7F499100E6FC49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -107,264 +72,157 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7463007B1E13EFC200ECD5A1 = {
+		74BC371C2C7F499000E6FC49 = {
 			isa = PBXGroup;
 			children = (
-				74E2B0AB22ECFE0B003DFDFE /* README.md */,
-				746300861E13EFC200ECD5A1 /* eidReader */,
-				7481B0C91F5FC66800EE9A3B /* QuickLook */,
-				746300981E13EFC200ECD5A1 /* eidReaderTests */,
-				746300A31E13EFC200ECD5A1 /* eidReaderUITests */,
-				746300851E13EFC200ECD5A1 /* Products */,
-				746300B31E13F08100ECD5A1 /* Frameworks */,
+				74BC37272C7F499000E6FC49 /* eidReader */,
+				74BC37392C7F499100E6FC49 /* eidReaderTests */,
+				74BC37432C7F499100E6FC49 /* eidReaderUITests */,
+				74BC37262C7F499000E6FC49 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		746300851E13EFC200ECD5A1 /* Products */ = {
+		74BC37262C7F499000E6FC49 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				746300841E13EFC200ECD5A1 /* eidReader.app */,
-				746300951E13EFC200ECD5A1 /* eidReaderTests.xctest */,
-				746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */,
-				7481B0C81F5FC66800EE9A3B /* QuickLook.qlgenerator */,
+				74BC37252C7F499000E6FC49 /* eidReader.app */,
+				74BC37362C7F499100E6FC49 /* eidReaderTests.xctest */,
+				74BC37402C7F499100E6FC49 /* eidReaderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		746300861E13EFC200ECD5A1 /* eidReader */ = {
-			isa = PBXGroup;
-			children = (
-				74FCE6D11E15966100CDF841 /* eidReader.entitlements */,
-				746300871E13EFC200ECD5A1 /* AppDelegate.swift */,
-				746300B71E14259E00ECD5A1 /* BEIDCard.swift */,
-				74FCE7101E16B76500CDF841 /* Document.swift */,
-				746300891E13EFC200ECD5A1 /* CardWindow.swift */,
-				7463008B1E13EFC200ECD5A1 /* Assets.xcassets */,
-				7463008D1E13EFC200ECD5A1 /* Main.storyboard */,
-				746300901E13EFC200ECD5A1 /* Info.plist */,
-				74354E5F1ED4A2480048911A /* PrintableMapView.swift */,
-				7465F87F1EFB0ADF00A84B59 /* Localizable.strings */,
-			);
-			path = eidReader;
-			sourceTree = "<group>";
-		};
-		746300981E13EFC200ECD5A1 /* eidReaderTests */ = {
-			isa = PBXGroup;
-			children = (
-				746300991E13EFC200ECD5A1 /* cardreaderTests.swift */,
-				7463009B1E13EFC200ECD5A1 /* Info.plist */,
-			);
-			path = eidReaderTests;
-			sourceTree = "<group>";
-		};
-		746300A31E13EFC200ECD5A1 /* eidReaderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				746300A41E13EFC200ECD5A1 /* cardreaderUITests.swift */,
-				746300A61E13EFC200ECD5A1 /* Info.plist */,
-			);
-			path = eidReaderUITests;
-			sourceTree = "<group>";
-		};
-		746300B31E13F08100ECD5A1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				74FCE6D21E15972A00CDF841 /* MapKit.framework */,
-				746300B41E13F08100ECD5A1 /* CryptoTokenKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7481B0C91F5FC66800EE9A3B /* QuickLook */ = {
-			isa = PBXGroup;
-			children = (
-				7481B0CA1F5FC66800EE9A3B /* GenerateThumbnailForURL.m */,
-				7481B0CC1F5FC66800EE9A3B /* GeneratePreviewForURL.m */,
-				7481B0CE1F5FC66800EE9A3B /* main.c */,
-				7481B0D01F5FC66800EE9A3B /* Info.plist */,
-			);
-			path = QuickLook;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		7481B0C51F5FC66800EE9A3B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		746300831E13EFC200ECD5A1 /* eidReader */ = {
+		74BC37242C7F499000E6FC49 /* eidReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 746300A91E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReader" */;
+			buildConfigurationList = 74BC374A2C7F499100E6FC49 /* Build configuration list for PBXNativeTarget "eidReader" */;
 			buildPhases = (
-				746300801E13EFC200ECD5A1 /* Sources */,
-				746300811E13EFC200ECD5A1 /* Frameworks */,
-				746300821E13EFC200ECD5A1 /* Resources */,
+				74BC37212C7F499000E6FC49 /* Sources */,
+				74BC37222C7F499000E6FC49 /* Frameworks */,
+				74BC37232C7F499000E6FC49 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				74BC37272C7F499000E6FC49 /* eidReader */,
 			);
 			name = eidReader;
-			productName = cardreader;
-			productReference = 746300841E13EFC200ECD5A1 /* eidReader.app */;
+			packageProductDependencies = (
+			);
+			productName = eidReader;
+			productReference = 74BC37252C7F499000E6FC49 /* eidReader.app */;
 			productType = "com.apple.product-type.application";
 		};
-		746300941E13EFC200ECD5A1 /* eidReaderTests */ = {
+		74BC37352C7F499100E6FC49 /* eidReaderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 746300AC1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderTests" */;
+			buildConfigurationList = 74BC374D2C7F499100E6FC49 /* Build configuration list for PBXNativeTarget "eidReaderTests" */;
 			buildPhases = (
-				746300911E13EFC200ECD5A1 /* Sources */,
-				746300921E13EFC200ECD5A1 /* Frameworks */,
-				746300931E13EFC200ECD5A1 /* Resources */,
+				74BC37322C7F499100E6FC49 /* Sources */,
+				74BC37332C7F499100E6FC49 /* Frameworks */,
+				74BC37342C7F499100E6FC49 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				746300971E13EFC200ECD5A1 /* PBXTargetDependency */,
+				74BC37382C7F499100E6FC49 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				74BC37392C7F499100E6FC49 /* eidReaderTests */,
 			);
 			name = eidReaderTests;
-			productName = cardreaderTests;
-			productReference = 746300951E13EFC200ECD5A1 /* eidReaderTests.xctest */;
+			packageProductDependencies = (
+			);
+			productName = eidReaderTests;
+			productReference = 74BC37362C7F499100E6FC49 /* eidReaderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7463009F1E13EFC200ECD5A1 /* eidReaderUITests */ = {
+		74BC373F2C7F499100E6FC49 /* eidReaderUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 746300AF1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderUITests" */;
+			buildConfigurationList = 74BC37502C7F499100E6FC49 /* Build configuration list for PBXNativeTarget "eidReaderUITests" */;
 			buildPhases = (
-				7463009C1E13EFC200ECD5A1 /* Sources */,
-				7463009D1E13EFC200ECD5A1 /* Frameworks */,
-				7463009E1E13EFC200ECD5A1 /* Resources */,
+				74BC373C2C7F499100E6FC49 /* Sources */,
+				74BC373D2C7F499100E6FC49 /* Frameworks */,
+				74BC373E2C7F499100E6FC49 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				746300A21E13EFC200ECD5A1 /* PBXTargetDependency */,
+				74BC37422C7F499100E6FC49 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				74BC37432C7F499100E6FC49 /* eidReaderUITests */,
 			);
 			name = eidReaderUITests;
-			productName = cardreaderUITests;
-			productReference = 746300A01E13EFC200ECD5A1 /* eidReaderUITests.xctest */;
+			packageProductDependencies = (
+			);
+			productName = eidReaderUITests;
+			productReference = 74BC37402C7F499100E6FC49 /* eidReaderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		7481B0C71F5FC66800EE9A3B /* QuickLook */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7481B0D31F5FC66800EE9A3B /* Build configuration list for PBXNativeTarget "QuickLook" */;
-			buildPhases = (
-				7481B0C31F5FC66800EE9A3B /* Sources */,
-				7481B0C41F5FC66800EE9A3B /* Frameworks */,
-				7481B0C51F5FC66800EE9A3B /* Headers */,
-				7481B0C61F5FC66800EE9A3B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = QuickLook;
-			productName = QuickLook;
-			productReference = 7481B0C81F5FC66800EE9A3B /* QuickLook.qlgenerator */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7463007C1E13EFC200ECD5A1 /* Project object */ = {
+		74BC371D2C7F499000E6FC49 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1230;
-				ORGANIZATIONNAME = Damiaan;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					746300831E13EFC200ECD5A1 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7TD9A665TC;
-						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Maps.Mac = {
-								enabled = 1;
-							};
-							com.apple.Sandbox = {
-								enabled = 0;
-							};
-						};
+					74BC37242C7F499000E6FC49 = {
+						CreatedOnToolsVersion = 16.0;
 					};
-					746300941E13EFC200ECD5A1 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7TD9A665TC;
-						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 746300831E13EFC200ECD5A1;
+					74BC37352C7F499100E6FC49 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 74BC37242C7F499000E6FC49;
 					};
-					7463009F1E13EFC200ECD5A1 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7TD9A665TC;
-						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 746300831E13EFC200ECD5A1;
-					};
-					7481B0C71F5FC66800EE9A3B = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 7TD9A665TC;
-						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+					74BC373F2C7F499100E6FC49 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 74BC37242C7F499000E6FC49;
 					};
 				};
 			};
-			buildConfigurationList = 7463007F1E13EFC200ECD5A1 /* Build configuration list for PBXProject "eidReader" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = 74BC37202C7F499000E6FC49 /* Build configuration list for PBXProject "eidReader" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
-				nl,
-				fr,
 			);
-			mainGroup = 7463007B1E13EFC200ECD5A1;
-			productRefGroup = 746300851E13EFC200ECD5A1 /* Products */;
+			mainGroup = 74BC371C2C7F499000E6FC49;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 74BC37262C7F499000E6FC49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				746300831E13EFC200ECD5A1 /* eidReader */,
-				746300941E13EFC200ECD5A1 /* eidReaderTests */,
-				7463009F1E13EFC200ECD5A1 /* eidReaderUITests */,
-				7481B0C71F5FC66800EE9A3B /* QuickLook */,
+				74BC37242C7F499000E6FC49 /* eidReader */,
+				74BC37352C7F499100E6FC49 /* eidReaderTests */,
+				74BC373F2C7F499100E6FC49 /* eidReaderUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		746300821E13EFC200ECD5A1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7463008C1E13EFC200ECD5A1 /* Assets.xcassets in Resources */,
-				7465F87D1EFB0ADF00A84B59 /* Localizable.strings in Resources */,
-				7463008F1E13EFC200ECD5A1 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		746300931E13EFC200ECD5A1 /* Resources */ = {
+		74BC37232C7F499000E6FC49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7463009E1E13EFC200ECD5A1 /* Resources */ = {
+		74BC37342C7F499100E6FC49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7481B0C61F5FC66800EE9A3B /* Resources */ = {
+		74BC373E2C7F499100E6FC49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,93 +232,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		746300801E13EFC200ECD5A1 /* Sources */ = {
+		74BC37212C7F499000E6FC49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74FCE7111E16B76500CDF841 /* Document.swift in Sources */,
-				7463008A1E13EFC200ECD5A1 /* CardWindow.swift in Sources */,
-				746300B81E14259E00ECD5A1 /* BEIDCard.swift in Sources */,
-				746300881E13EFC200ECD5A1 /* AppDelegate.swift in Sources */,
-				74354E601ED4A2480048911A /* PrintableMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		746300911E13EFC200ECD5A1 /* Sources */ = {
+		74BC37322C7F499100E6FC49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7463009A1E13EFC200ECD5A1 /* cardreaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7463009C1E13EFC200ECD5A1 /* Sources */ = {
+		74BC373C2C7F499100E6FC49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746300A51E13EFC200ECD5A1 /* cardreaderUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7481B0C31F5FC66800EE9A3B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7481B0CB1F5FC66800EE9A3B /* GenerateThumbnailForURL.m in Sources */,
-				7481B0CD1F5FC66800EE9A3B /* GeneratePreviewForURL.m in Sources */,
-				7481B0CF1F5FC66800EE9A3B /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		746300971E13EFC200ECD5A1 /* PBXTargetDependency */ = {
+		74BC37382C7F499100E6FC49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 746300831E13EFC200ECD5A1 /* eidReader */;
-			targetProxy = 746300961E13EFC200ECD5A1 /* PBXContainerItemProxy */;
+			target = 74BC37242C7F499000E6FC49 /* eidReader */;
+			targetProxy = 74BC37372C7F499100E6FC49 /* PBXContainerItemProxy */;
 		};
-		746300A21E13EFC200ECD5A1 /* PBXTargetDependency */ = {
+		74BC37422C7F499100E6FC49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 746300831E13EFC200ECD5A1 /* eidReader */;
-			targetProxy = 746300A11E13EFC200ECD5A1 /* PBXContainerItemProxy */;
+			target = 74BC37242C7F499000E6FC49 /* eidReader */;
+			targetProxy = 74BC37412C7F499100E6FC49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		7463008D1E13EFC200ECD5A1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7463008E1E13EFC200ECD5A1 /* Base */,
-				74FCE6D61E15BAE400CDF841 /* nl */,
-				74EB7CDC1EFAF46E00C959DC /* fr */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7465F87F1EFB0ADF00A84B59 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7465F87E1EFB0ADF00A84B59 /* Base */,
-				7465F8811EFB0AED00A84B59 /* nl */,
-				7465F8821EFB0AED00A84B59 /* fr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		746300A71E13EFC200ECD5A1 /* Debug */ = {
+		74BC37482C7F499100E6FC49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -480,14 +299,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -501,25 +321,26 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		746300A81E13EFC200ECD5A1 /* Release */ = {
+		74BC37492C7F499100E6FC49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -539,14 +360,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -554,203 +376,225 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
-		746300AA1E13EFC200ECD5A1 /* Debug */ = {
+		74BC374B2C7F499100E6FC49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = eidReader/eidReader.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"eidReader/Preview Content\"";
 				DEVELOPMENT_TEAM = 7TD9A665TC;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = eidReader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		746300AB1E13EFC200ECD5A1 /* Release */ = {
+		74BC374C2C7F499100E6FC49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = eidReader/eidReader.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"eidReader/Preview Content\"";
 				DEVELOPMENT_TEAM = 7TD9A665TC;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = eidReader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		746300AD1E13EFC200ECD5A1 /* Debug */ = {
+		74BC374E2C7F499100E6FC49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = eidReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreaderTests;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eidReader.app/Contents/MacOS/eidReader";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eidReader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/eidReader";
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		746300AE1E13EFC200ECD5A1 /* Release */ = {
+		74BC374F2C7F499100E6FC49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = eidReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreaderTests;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eidReader.app/Contents/MacOS/eidReader";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eidReader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/eidReader";
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		746300B01E13EFC200ECD5A1 /* Debug */ = {
+		74BC37512C7F499100E6FC49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = eidReaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreaderUITests;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = cardreader;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = eidReader;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		746300B11E13EFC200ECD5A1 /* Release */ = {
+		74BC37522C7F499100E6FC49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = eidReaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.cardreaderUITests;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = cardreader;
-			};
-			name = Release;
-		};
-		7481B0D11F5FC66800EE9A3B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = QuickLook/Info.plist;
-				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader.QuickLook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "QuickLook/QuickLook-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				WRAPPER_EXTENSION = qlgenerator;
-			};
-			name = Debug;
-		};
-		7481B0D21F5FC66800EE9A3B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_ENABLE_MODULES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7TD9A665TC;
-				INFOPLIST_FILE = QuickLook/Info.plist;
-				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devian.eidReader.QuickLook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "QuickLook/QuickLook-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-				WRAPPER_EXTENSION = qlgenerator;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = eidReader;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7463007F1E13EFC200ECD5A1 /* Build configuration list for PBXProject "eidReader" */ = {
+		74BC37202C7F499000E6FC49 /* Build configuration list for PBXProject "eidReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				746300A71E13EFC200ECD5A1 /* Debug */,
-				746300A81E13EFC200ECD5A1 /* Release */,
+				74BC37482C7F499100E6FC49 /* Debug */,
+				74BC37492C7F499100E6FC49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		746300A91E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReader" */ = {
+		74BC374A2C7F499100E6FC49 /* Build configuration list for PBXNativeTarget "eidReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				746300AA1E13EFC200ECD5A1 /* Debug */,
-				746300AB1E13EFC200ECD5A1 /* Release */,
+				74BC374B2C7F499100E6FC49 /* Debug */,
+				74BC374C2C7F499100E6FC49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		746300AC1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderTests" */ = {
+		74BC374D2C7F499100E6FC49 /* Build configuration list for PBXNativeTarget "eidReaderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				746300AD1E13EFC200ECD5A1 /* Debug */,
-				746300AE1E13EFC200ECD5A1 /* Release */,
+				74BC374E2C7F499100E6FC49 /* Debug */,
+				74BC374F2C7F499100E6FC49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		746300AF1E13EFC200ECD5A1 /* Build configuration list for PBXNativeTarget "eidReaderUITests" */ = {
+		74BC37502C7F499100E6FC49 /* Build configuration list for PBXNativeTarget "eidReaderUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				746300B01E13EFC200ECD5A1 /* Debug */,
-				746300B11E13EFC200ECD5A1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7481B0D31F5FC66800EE9A3B /* Build configuration list for PBXNativeTarget "QuickLook" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7481B0D11F5FC66800EE9A3B /* Debug */,
-				7481B0D21F5FC66800EE9A3B /* Release */,
+				74BC37512C7F499100E6FC49 /* Debug */,
+				74BC37522C7F499100E6FC49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7463007C1E13EFC200ECD5A1 /* Project object */;
+	rootObject = 74BC371D2C7F499000E6FC49 /* Project object */;
 }
